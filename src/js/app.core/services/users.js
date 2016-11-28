@@ -2,11 +2,11 @@ function UserService ($http, $cookies, SERVER) {
 
   this.login = login;
   this.create = create;
-  // this.isLoggedIn = isLoggedIn;
-  // this.isAdmin = isAdmin;
-  // this.setUser = setUser;
+  this.isLoggedIn = isLoggedIn;
+  this.isAdmin = isAdmin;
+  this.setUser = setUser;
   this.logout = logout;
-  // this.getHeaders = getHeaders;
+  this.getHeaders = getHeaders;
 
   function create (user) {
     return $http.post(`${SERVER}/users`, user);
