@@ -1,3 +1,3 @@
-const SERVER = 'https://class-server.herokuapp.com/collections/ironstackFE'
+const SERVER = 'https://hidden-peak-73244.herokuapp.com'
 
 export { SERVER };

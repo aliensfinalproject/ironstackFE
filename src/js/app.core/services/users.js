@@ -9,7 +9,7 @@ function UserService ($http, $cookies, SERVER) {
   this.getHeaders = getHeaders;
 
   function create (user) {
-    return $http.post(`${SERVER}/users`, user);
+    return $http.post(`${SERVER}/register`, user);
   };
 
   function login (user) {
