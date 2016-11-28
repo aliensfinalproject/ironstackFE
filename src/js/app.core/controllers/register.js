@@ -5,10 +5,15 @@ function RegisterController (UserService, $state) {
   vm.createUser = createUser;
 
   function createUser (user) {
+    console.log ('hello')
     UserService.create(user).then((resp) => {
-      console.log('Created User: ', resp);
+
+      console.log(' : ', resp);
       $state.go('root.home');
+    }, function test (error){
+      console.log(error)
     });
+
   };
 };
 
