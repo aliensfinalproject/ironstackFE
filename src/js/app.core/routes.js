@@ -3,7 +3,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
    .state('root', {
      abstract: true,
      templateUrl: 'templates/layout.tpl.html',
-    //  controller: 'LayoutController as layout'
+     controller: 'LayoutController as layout'
    })
    .state('root.home', {
      url: '/home',
@@ -13,12 +13,12 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
    .state('root.register', {
      url: '/register',
      templateUrl: 'templates/register.tpl.html',
-    //  controller: 'RegisterController as register'
+     controller: 'RegisterController as register'
    })
    .state('root.login', {
      url: '/login',
      templateUrl: 'templates/login.tpl.html',
-    //  controller: 'LoginController as login'
+     controller: 'LoginController as login'
    })
 
  $urlRouterProvider.otherwise('/home');
