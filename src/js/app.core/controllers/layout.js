@@ -1,6 +1,5 @@
 function LayoutController ($rootScope, UserService) {
   let vm = this;
-  console.log("tried to start layout controller");
 
   vm.admin = UserService.isAdmin();
   vm.loggedIn = UserService.isLoggedIn();
