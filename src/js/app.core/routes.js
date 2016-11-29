@@ -2,39 +2,35 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
  $stateProvider
    .state('root', {
      abstract: true,
-     templateUrl: 'templates/layout.tpl.html',
-     //controller: 'LayoutController as layout'
+    //  url: '/main',
+     templateUrl: 'templates/main.tpl.html'
    })
-   .state('root.main', {
-     url: '/main',
-     templateUrl: 'templates/main.tpl.html',
-    //  controller: 'NewsfeedController as newsfeed'
+   .state('root.main.login', {
+     url: '/login',
+     templateUrl: 'templates/login.tpl.html',
+     controller: 'LoginController as login'
    })
-   .state('root.register', {
+   .state('root.main.register', {
      url: '/register',
      templateUrl: 'templates/register.tpl.html',
      controller: 'RegisterController as register'
    })
-   /*.state('root.login', {
-     url: '/login',
-     templateUrl: 'templates/login.tpl.html',
-     controller: 'LoginController as login'
-   })*/
-
-   .state('user',{
+   .state('root.user', {
       abstract: true,
-      templateUrl: 'templates'
+      templateUrl: 'templates/layout.tpl.html',
+      controller: 'LayoutController as layout'
    })
-   .state('user.home'{
-    url:'/home',
-    templateUrl: 'templates/home.tpl.html'
-   })
-   .state('user.class'{
+   .state('root.user.class', {
     url: '/class',
     templateUrl: 'templates/class.tpl.html'
    })
+   .state('root.user.home', {
+    url:'/home',
+    templateUrl: 'templates/home.tpl.html'
+   })
 
- $urlRouterProvider.otherwise('/home');
+
+ $urlRouterProvider.otherwise('/login');
 };
 
 routerConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
