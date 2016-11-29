@@ -2,16 +2,19 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
  $stateProvider
    .state('root', {
      abstract: true,
-    //  url: '/main',
+     templateUrl: 'templates/root.tpl.html'
+   })
+   .state('root.main', {
+     url: '/',
      templateUrl: 'templates/main.tpl.html'
    })
    .state('root.main.login', {
-     url: '/login',
+     url: 'login',
      templateUrl: 'templates/login.tpl.html',
      controller: 'LoginController as login'
    })
    .state('root.main.register', {
-     url: '/register',
+     url: 'register',
      templateUrl: 'templates/register.tpl.html',
      controller: 'RegisterController as register'
    })
