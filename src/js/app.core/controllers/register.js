@@ -9,7 +9,7 @@ function RegisterController (UserService, $state) {
     UserService.create(user).then((resp) => {
 
       console.log(' : ', resp);
-      $state.go('root.home');
+      $state.go('root.login');
     }, function test (error){
       console.log(error)
     });

@@ -10,7 +10,7 @@ function LoginController (UserService, $state, $rootScope) {
         UserService.setUser(resp.data);
         console.log(resp.data);
         $rootScope.$broadcast('loginChange', {});
-        $state.go('root.home');
+        $state.go('root.user.home');
       },
       errors => {
         console.log(errors.data.error);
