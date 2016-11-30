@@ -2,6 +2,7 @@ function UserService ($http, $cookies, SERVER) {
 
   this.login = login;
   this.create = create;
+  this.getClass = getClass;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
   this.setUser = setUser;
@@ -14,6 +15,10 @@ function UserService ($http, $cookies, SERVER) {
 
   function login (user) {
     return $http.post(`${SERVER}/login`, user);
+  }
+
+  function getClass(){
+    return $http.get('${SERVER}/class');
   }
 
   function isLoggedIn () {
