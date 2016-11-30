@@ -20,6 +20,9 @@ function UserService ($http, $cookies, SERVER) {
   function getClass(){
     return $http.get('${SERVER}/class');
   }
+  function addingClass(){
+    return $http.post('${SERVER}/class/create')
+  }
 
   function isLoggedIn () {
     return $cookies.get('username') ? true : false;

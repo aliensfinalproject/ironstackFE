@@ -7,9 +7,8 @@ function LoginController (UserService, $state, $rootScope) {
     UserService.login(user).then(
       resp => {
         UserService.setUser(resp.data);
-        console.log(resp.data);
         $rootScope.$broadcast('loginChange', {});
-        $state.go('root.user.class');
+        $state.go('root.user.class.list');
       },
       errors => {
         console.log(errors.data.error);
