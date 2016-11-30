@@ -17,7 +17,7 @@ function UserService ($http, $cookies, SERVER) {
   }
 
   function isLoggedIn () {
-    return $cookies.get('user-name') ? true : false;
+    return $cookies.get('username') ? true : false;
   }
 
   function isAdmin () {
@@ -25,12 +25,12 @@ function UserService ($http, $cookies, SERVER) {
   }
 
   function logout () {
-    $cookies.remove('user-name');
+    $cookies.remove('username');
     $cookies.remove('access_token');
   }
 
   function setUser (data) {
-    $cookies.put('user-name', data.userName);
+    $cookies.put('username', data.username);
     $cookies.put('access_token', data.access_token);
     $cookies.put('admin', data.admin);
   }
