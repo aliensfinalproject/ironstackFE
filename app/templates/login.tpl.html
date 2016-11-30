@@ -1,17 +1,31 @@
-<h3 class="title">Login</h3>
+<div class = "box font">
 
-<form name="signup-form" ng-submit="login.activate(user)">
- <p class="control">
-   <input name="username" type="text" placeholder="Username"
-          ng-model="user.userName" required />
- </p>
- <p class="control">
-   <input name="password" type="password" placeholder="Password"
-          ng-model="user.password" required />
- </p>
- <button>Let's Do It!</button>
-</form>
+  <h3 class="title">Login</h3>
+
+  <form name="login-form" ng-submit="login.activate(user)">
+   <p class="control">
+     <input class = "font" name="username" type="text" placeholder="Username"
+            ng-model="user.userName" required />
+   </p>
+
+   <p class="control">
+     <input class = "font" name="password" type="password" placeholder="Password"
+            ng-model="user.password" required />
+   </p>
+
+   <p>
+     {{ login.error }}
+   </p>
+   <button class = "font button is-primary">Let's Do It!</button>
+
+  </form>
+
+  <div class="new-member">
+
+    <div>Not a member?</div>
+    <a href = "#/register"><button class = "font button is-warning">Register</button></a>
+
+  </div>
 
 
-Not a member?
-<a href = "#/register">Register</a>
+</div>
