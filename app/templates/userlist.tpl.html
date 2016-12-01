@@ -3,15 +3,25 @@
     <th>First Name</th>
     <th>Last Name</th> 
   </tr>
-  <tr>
+  <tr ng-repeat = "listuser in userlist.listusers">
     <td>
       <ul> 
-      <li ng-repeat = "listuser in userlist.listusers">{{listuser.firstName}}</li>
+      <li>{{listuser.firstName}}</li>
       </ul>
     </td>
     <td>
       <ul> 
-      <li ng-repeat = "listuser in userlist.listusers">{{listuser.lastName}}</li>
+      <li>{{listuser.lastName}}</li>
+      </ul>
+    </td>
+    <td>
+      <ul> 
+      <li><button type="button" id ="backbutton" ng-click="userlist.makeAdmin(listuser.id)"> Make Admin </button></li>
+      </ul>
+      </td>
+      <td>
+      <ul> 
+      <li><button type="button" id ="backbutton" ng-click="userlist.deleteUser(listuser.id)"> Delete User </button></li>
       </ul>
     </td>
 </tr>

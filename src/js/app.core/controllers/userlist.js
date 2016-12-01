@@ -11,6 +11,14 @@ function UserListController(UserService,$state,$rootScope){
 			})
 	}
 	vm.displayUsers();
+
+	vm.deleteUser = function(userid){
+		UserService.deleteUser().then(
+			resp =>{
+				$state.go('root.user.class.list')
+			})
+
+	}
 }
 
 

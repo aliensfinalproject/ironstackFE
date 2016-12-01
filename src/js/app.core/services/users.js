@@ -1,11 +1,12 @@
-function UserService ($http, $cookies, SERVER) {
+function UserService ($http, $cookies, SERVER,$stateParams) {
 
   this.login = login;
   this.create = create;
   this.getClasses = getClasses;
   this.getClass = getClass;
-  this.getUsers = getUsers;
   this.addingClass = addingClass;
+  this.getUsers = getUsers;
+  this.deleteUser = deleteUser;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
   this.setUser = setUser;
@@ -32,6 +33,9 @@ function UserService ($http, $cookies, SERVER) {
   }
   function getUsers(){
     return $http.get(`${SERVER}/usermgmt`,{headers:getHeaders()});
+  }
+  function deleteUser(){
+    return $http.delete(`${SERVER}/users/delete/`+$stateParams._id,{headers:getHeaders()});
   }
 
   function isLoggedIn () {
@@ -62,5 +66,5 @@ function UserService ($http, $cookies, SERVER) {
 
 };
 
-UserService.$inject = ['$http', '$cookies', 'SERVER'];
+UserService.$inject = ['$http', '$cookies', 'SERVER','$stateParams'];
 export { UserService };
