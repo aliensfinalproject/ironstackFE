@@ -12,6 +12,9 @@ import { LoginController } from "./controllers/login";
 import { UserService } from "./services/users";
 import { ClassController } from "./controllers/class"
 import { ClassAddController } from "./controllers/classadd"
+import { UserListController } from "./controllers/userlist"
+import { AboutController } from "./controllers/aboutclass"
+import { HomeController } from "./controllers/home"
 
 angular
  .module('app.core', ['ui.router', 'ngCookies'])
@@ -22,4 +25,7 @@ angular
  .controller('LoginController', LoginController)
  .controller('ClassController',ClassController)
  .controller('ClassAddController',ClassAddController)
+ .controller('UserListController',UserListController)
+ .controller('AboutController',AboutController)
+ .controller('HomeController',HomeController)
  .service('UserService', UserService);
