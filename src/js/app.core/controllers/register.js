@@ -7,8 +7,8 @@ function RegisterController (UserService, $state) {
   function createUser (user) {
     UserService.create(user).then((resp) => {
 
-      console.log(' : ', resp);
-      $state.go('root.main.class.list');
+      console.log(resp);
+      $state.go('root.main.login');
     }, function test (error){
       console.log(error)
     });
