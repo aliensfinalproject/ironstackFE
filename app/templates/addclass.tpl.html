@@ -1,0 +1,18 @@
+<h3 class="title">Add Class</h3>
+
+<form name="" ng-submit="addclass.createclass(addclass.class)">
+  <p class="control">
+    <input  type="text" placeholder="Class Name"
+           ng-model="addclass.class.className" required />
+  </p>
+  <p class="control">
+    <input  type="text" placeholder="Instructor Name"
+           ng-model="addclass.class.instructor" required />
+  </p>
+ <p class="control">
+   <input type="text" placeholder="Campus"
+          ng-model="addclass.class.campus" required />
+ </p>
+ <button type= "submit"> Create Class</button>
+ <a ui-sref = "root.user.class.list"><button type="button"> Back </button></a>
+</form>
