@@ -7,18 +7,22 @@
   </tr>
   <tr>
     <td>
-      <ul class ="list"> 
-  
-</ul>
+      <ul> 
+      <li ng-repeat = "listclass in class.list">{{listclass.className}}</li>
+      </ul>
     </td>
-    <td></td> 
-    <td></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td> 
-    <td></td>
-  </tr>
+    <td>
+      <ul> 
+      <li ng-repeat = "listclass in class.list">{{listclass.instructor}}</li>
+      </ul>
+    </td>
+    <td>
+      <ul> 
+      <li ng-repeat = "listclass in class.list">{{listclass.campus}}</li>
+      </ul>
+    </td>
+</tr>
+ 
 </table>
 
 <div class="add">

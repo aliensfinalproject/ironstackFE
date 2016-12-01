@@ -1,24 +1,21 @@
-function ClassController(UserService,$state,$rootScope,$scope){
+function ClassController(UserService,$state,$rootScope){
 	console.log('hi')
 
 	 let vm = this;
-	 vm.listOfClass = [];
+	 vm.list = [];
 
-	 function listOfClass(){
+	 vm.listclasses = function(){
 	 	UserService.getClass().then(
 	 		resp =>{
 	 			console.log(resp);
-	 			vm.listOfClass = resp.data;
+	 			vm.list = resp.data;
 
 	 		})
 	 }
-	 listOfClass();
+	 vm.listclasses();
 
-	 $scope.addClass = function(){
-
-	 }
-
+	
 
 }
-ClassController.$inject = ['UserService', '$state', '$rootScope','$scope'];
+ClassController.$inject = ['UserService', '$state', '$rootScope'];
 export { ClassController };
