@@ -2,6 +2,7 @@ function UserService ($http, $cookies, SERVER) {
 
   this.login = login;
   this.create = create;
+  this.getClasses = getClasses;
   this.getClass = getClass;
   this.getUsers = getUsers;
   this.addingClass = addingClass;
@@ -19,8 +20,12 @@ function UserService ($http, $cookies, SERVER) {
     return $http.post(`${SERVER}/login`, user);
   }
 
-  function getClass(){
+  function getClasses(){
     return $http.get(`${SERVER}/class`,{headers:getHeaders()});
+  }
+  function getClass(){
+    return $http.get(`${SERVER}/class/`,{headers:getHeaders()});
+
   }
   function addingClass(clazz){
     return $http.post(`${SERVER}/class/create`, clazz, {headers:getHeaders()});

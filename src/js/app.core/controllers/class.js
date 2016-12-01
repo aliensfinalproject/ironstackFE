@@ -4,7 +4,7 @@ function ClassController(UserService,$state,$rootScope){
 	 vm.list = [];
 
 	 vm.listclasses = function(){
-	 	UserService.getClass().then(
+	 	UserService.getClasses().then(
 	 		resp =>{
 	 			console.log(resp);
 	 			vm.list = resp.data;
@@ -12,6 +12,7 @@ function ClassController(UserService,$state,$rootScope){
 	 		})
 	 }
 	 vm.listclasses();
+	 
 
 	
 
