@@ -1,17 +1,17 @@
 <h3 class="title">Add Class</h3>
 
-<form name="" ng-submit="">
+<form name="" ng-submit="addclass.createclass(addclass.class)">
   <p class="control">
     <input  type="text" placeholder="Class Name"
-           ng-model="" required />
+           ng-model="addclass.class.className" required />
   </p>
   <p class="control">
     <input  type="text" placeholder="Instructor Name"
-           ng-model="" required />
+           ng-model="addclass.class.instructor" required />
   </p>
  <p class="control">
    <input type="text" placeholder="Campus"
-          ng-model="" required />
+          ng-model="addclass.class.campus" required />
  </p>
- <button .ui.button "ui button"> Create Class</button>
+ <button type= "submit"> Create Class</button>
 </form>

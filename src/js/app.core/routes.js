@@ -35,7 +35,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('root.user.class.add', {
     url: '/add',
     templateUrl: 'templates/addclass.tpl.html',
-    controller: 'ClassAddController as class'
+    controller: 'ClassAddController as addclass'
    })
    .state('root.user.home', {
     url:'/home',
