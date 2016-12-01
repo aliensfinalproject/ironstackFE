@@ -50,7 +50,8 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
    })
    .state('root.user.home', {
     url:'/home',
-    templateUrl: 'templates/home.tpl.html'
+    templateUrl: 'templates/home.tpl.html',
+    controller: 'HomeController as home'
    })
 
 
