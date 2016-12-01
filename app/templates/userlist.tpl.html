@@ -1,0 +1,22 @@
+<table style="width:100%">
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th> 
+  </tr>
+  <tr>
+    <td>
+      <ul> 
+      <li ng-repeat = "listuser in userlist.listusers">{{listuser.firstName}}</li>
+      </ul>
+    </td>
+    <td>
+      <ul> 
+      <li ng-repeat = "listuser in userlist.listusers">{{listuser.lastName}}</li>
+      </ul>
+    </td>
+</tr>
+ 
+</table>
+
+<a ui-sref = "root.user.class.list"><button type="button" id ="backbutton"> Back </button></a>
+</form>

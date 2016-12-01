@@ -1,6 +1,5 @@
 function ClassController(UserService,$state,$rootScope){
-	console.log('hi')
-
+	
 	 let vm = this;
 	 vm.list = [];
 

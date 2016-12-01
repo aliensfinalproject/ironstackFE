@@ -3,6 +3,7 @@ function UserService ($http, $cookies, SERVER) {
   this.login = login;
   this.create = create;
   this.getClass = getClass;
+  this.getUsers = getUsers;
   this.addingClass = addingClass;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
@@ -23,6 +24,9 @@ function UserService ($http, $cookies, SERVER) {
   }
   function addingClass(clazz){
     return $http.post(`${SERVER}/class/create`, clazz, {headers:getHeaders()});
+  }
+  function getUsers(){
+    return $http.get(`${SERVER}/usermgmt`,{headers:getHeaders()});
   }
 
   function isLoggedIn () {
