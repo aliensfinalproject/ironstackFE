@@ -31,9 +31,11 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   function addingClass(clazz){
     return $http.post(`${SERVER}/class/create`, clazz, {headers:getHeaders()});
   }
+  
   function getUsers(){
     return $http.get(`${SERVER}/usermgmt`,{headers:getHeaders()});
   }
+
   function deleteUser(){
     return $http.delete(`${SERVER}/users/delete/`+$stateParams._id,{headers:getHeaders()});
   }

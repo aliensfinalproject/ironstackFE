@@ -4,7 +4,7 @@ function ClassController(UserService,$state,$rootScope){
 	 vm.list = [];
 	 vm.isAdmin = UserService.isAdmin()
 
-	 console.log('authorized? ', vm.isAdmin)
+	//  console.log('authorized? ', vm.isAdmin)
 
 	 vm.listclasses = function(){
 	 	UserService.getClasses().then(
