@@ -9,6 +9,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.deleteUser = deleteUser;
   this.getPost = getPost;
   this.addPost = addPost;
+  this.userPost= userPost;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
   this.setUser = setUser;
@@ -40,10 +41,13 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
     return $http.delete(`${SERVER}/users/delete/`+$stateParams._id,{headers:getHeaders()});
   }
   function addPost(post, class_id){
-    return $http.post(`${SERVER}/class/${class_id}/post`,post,{headers:getHeaders()})
+    return $http.post(`${SERVER}/class/${class_id}/post`,post,{headers:getHeaders()});
   }
   function getPost(class_id){
-    return $http.get(`${SERVER}/class/${class_id}/posts`,{headers:getHeaders()})
+    return $http.get(`${SERVER}/class/${class_id}/posts`,{headers:getHeaders()});
+  }
+  function userPost(){
+    return $http.get(`${SERVER}/users/me/posts`,{headers:getHeaders()});
   }
 
   function isLoggedIn () {
