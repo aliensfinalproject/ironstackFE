@@ -25,9 +25,9 @@
  
 </table>
 
-<div class="add">
+<div class="add" ng-if ="class.isAdmin">
 <a ui-sref = "root.user.class.add">ADD CLASS</a>  
 </div>
-<div class="users">
+<div class="users" ng-if ="class.isAdmin">
 <a ui-sref = "root.user.class.users">View Users</a>  
 </div>
