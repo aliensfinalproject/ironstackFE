@@ -5,20 +5,20 @@
     <th>Campus</th>
     <th>Batch</th>
   </tr>
-  <tr>
+  <tr ng-repeat = "listclass in class.list">
     <td>
       <ul> 
-      <li ng-repeat = "listclass in class.list" ui-sref= "root.user.class.about">{{listclass.className}}</li>
+      <li  ui-sref= "root.user.class.about({id:listclass.id})">{{listclass.className}}</li>
       </ul>
     </td>
     <td>
       <ul> 
-      <li ng-repeat = "listclass in class.list">{{listclass.instructor}}</li>
+      <li>{{listclass.instructor}}</li>
       </ul>
     </td>
     <td>
       <ul> 
-      <li ng-repeat = "listclass in class.list">{{listclass.campus}}</li>
+      <li>{{listclass.campus}}</li>
       </ul>
     </td>
 </tr>

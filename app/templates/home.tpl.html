@@ -1,6 +1,14 @@
-<h1>Hello World</h1>
+<h1>My Posts</h1>
 
-This is the home page, once a user is logged in, it will show the newsfeed for the class that they are registered for.
+<div>
+	<div ng-repeat = "userpost in home.userposts">
+	<div>Title: {{userpost.title}}</div>
+	<div>Content: {{userpost.content}}</div>
+	</div>
+
+</div>
+
+
 
 
 <a ui-sref = "root.user.class.list"><button type="button" id ="backbutton"> Back </button></a>

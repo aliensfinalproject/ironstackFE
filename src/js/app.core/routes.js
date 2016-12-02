@@ -35,7 +35,8 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
    .state('root.user.class.about', {
     url: '/about',
     templateUrl: 'templates/about.tpl.html',
-    controller: 'AboutController as about'
+    controller: 'AboutController as about',
+    params: {id:null}
    })
 
     .state('root.user.class.add', {
