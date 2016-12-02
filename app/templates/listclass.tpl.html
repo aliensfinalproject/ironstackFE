@@ -1,33 +1,33 @@
 <table style="width:100%">
   <tr>
     <th>Class</th>
-    <th>Instructor</th> 
+    <th>Instructor</th>
     <th>Campus</th>
     <th>Batch</th>
   </tr>
   <tr>
     <td>
-      <ul> 
+      <ul>
       <li ng-repeat = "listclass in class.list" ui-sref= "root.user.class.about">{{listclass.className}}</li>
       </ul>
     </td>
     <td>
-      <ul> 
+      <ul>
       <li ng-repeat = "listclass in class.list">{{listclass.instructor}}</li>
       </ul>
     </td>
     <td>
-      <ul> 
+      <ul>
       <li ng-repeat = "listclass in class.list">{{listclass.campus}}</li>
       </ul>
     </td>
 </tr>
- 
+
 </table>
 
-<div class="add">
-<a ui-sref = "root.user.class.add">ADD CLASS</a>  
+<div class="add" ng-if="class.isAdmin">
+<a ui-sref = "root.user.class.add">ADD CLASS</a>
 </div>
-<div class="users">
-<a ui-sref = "root.user.class.users">View Users</a>  
+<div class="users" ng-if="class.isAdmin">
+<a ui-sref = "root.user.class.users">View Users</a>
 </div>

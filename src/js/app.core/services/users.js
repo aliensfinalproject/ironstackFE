@@ -43,7 +43,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   }
 
   function isAdmin () {
-    return $cookies.get('admin') === 'true';
+    return $cookies.get('admin') === '1';
   }
 
   function logout () {
