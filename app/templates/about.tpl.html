@@ -23,10 +23,10 @@
 
 </form>
 <div>
-	<div ng-repeat = "post in about.posts">
-	<div>Title: {{post.title}}</div>
-	<div> Category : {{post.category}}</div>
-	<div>Content: {{post.content}}</div>
+	<di  ng-repeat = "post in about.posts">
+	<div class = "styling_display" >
+	<div id="title" ui-sref="root.user.class.postDetails({id: post.id,class_id:post.class_id})">Title: {{post.title}}</div>
+	<div id="category"> Category : {{post.category}}</div>
 	</div>
 	
 </div>
