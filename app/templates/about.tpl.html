@@ -7,14 +7,22 @@
 	<label class="label"> Content </label>
 	<textarea class="textarea" ng-model="about.post.content"></textarea>
 	<button type="submit"> Add Post </button>
+	<select  value = "category" ng-model ="about.post.category" >
+		<option value="" disabled selected>Please Select</option>
+	  <option value="question">Questions</option>
+	  <option value="video">Video tutorials</option>
+	  <option value="code">Code snippets</option>
+	  <option value="status">Status Update</option>
+	</select>
 
 </form>
 <div>
 	<div ng-repeat = "post in about.posts">
 	<div>Title: {{post.title}}</div>
+	<div> Category : {{post.category}}</div>
 	<div>Content: {{post.content}}</div>
 	</div>
-
+	
 </div>
 
 
