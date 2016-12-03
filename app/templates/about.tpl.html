@@ -1,19 +1,25 @@
 <h1></h1>
 <h1>All Posts</h1>
 
-<form ng-submit = "about.createPost()">
+<form class="styling_form" ng-submit = "about.createPost()">
 	<label class="label"> Title </label>
     <input class="input" type="text" ng-model ="about.post.title">
-	<label class="label"> Content </label>
-	<textarea class="textarea" ng-model="about.post.content"></textarea>
-	<button type="submit"> Add Post </button>
-	<select  value = "category" ng-model ="about.post.category" >
-		<option value="" disabled selected>Please Select</option>
+    <select class="styling_select" value = "category" ng-model ="about.post.category" >
+	  <option value="" disabled selected>Please Select Category...</option>
 	  <option value="question">Questions</option>
 	  <option value="video">Video tutorials</option>
 	  <option value="code">Code snippets</option>
 	  <option value="status">Status Update</option>
 	</select>
+	<label class="label" ng-show="about.post.category == 'question'"> Question </label>
+	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'question'"></textarea>
+	<label class="label" ng-model="about.post.content" ng-show="about.post.category == 'status'"> Status Update </label>
+	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'status'"></textarea>
+	<label class="label" ng-model="about.post.content" ng-show="about.post.category == 'code'"> Code Snippet </label>
+	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'code'" ng-show="about.post.category == 'video'"></textarea>
+	<input type="url" name="code_url" ng-show="about.post.category == 'video'" >
+	<button type="submit"> Add Post </button>
+
 
 </form>
 <div>
