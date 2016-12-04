@@ -13,7 +13,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 				var base_url = "https://www.youtube.com/embed/"
 				var video_url = base_url.concat(reqdCode);
 				vm.display_url= $sce.trustAsResourceUrl(video_url)
-
+				
 			})
 
 	}

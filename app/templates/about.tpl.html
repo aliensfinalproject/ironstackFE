@@ -7,7 +7,7 @@
     <select class="styling_select" value = "category" ng-model ="about.post.category" >
 	  <option value="" disabled selected>Please Select Category...</option>
 	  <option value="question">Questions</option>
-	  <option value="video">Video tutorials</option>
+	  <option value="video">You-Tube Video tutorials</option>
 	  <option value="code">Code snippets</option>
 	  <option value="status">Status Update</option>
 	</select>
@@ -21,7 +21,7 @@
 	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'code'" ng-show="about.post.category == 'code'"></textarea>
 
 	<label class="label" ng-show="about.post.category == 'video'"> You-Tube Video </label>
-	<input type="url" name="code_url" ng-model="about.post.content" ng-show="about.post.category == 'video'" >
+	<input type="url" name="code_url" ng-model="about.post.content" ng-if="about.post.category == 'video'" >
 	<button type="submit"> Add Post </button>
 
 
