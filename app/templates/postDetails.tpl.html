@@ -1,5 +1,24 @@
+<div ng-if="post.postDetails.category == 'question'">
+	<div class="content">
+		<div> {{post.postDetails.title}}</div>
+		<div> {{post.postDetails.content}}</div>
+		
+	</div>
+</div>
 
-<div> {{post.postDetails.content}}</div>
+<div ng-if="post.postDetails.category == 'status'">
+	<div class="notification is-primary">
+		<div> {{post.postDetails.title}}</div>
+		<div> {{post.postDetails.content}}</div>
+	</div>
+</div>
+
+<div ng-if="post.postDetails.category == 'video'">
+		<div> {{post.postDetails.title}}</div>
+		<iframe width="560" height="315" ng-src="{{post.display_url}}"frameborder="0" allowfullscreen></iframe>
+		
+</div>
+
 
 
 <a ui-sref = "root.user.class.list"><button type="button" id="backbutton"> Back </button></a>

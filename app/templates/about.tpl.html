@@ -13,11 +13,15 @@
 	</select>
 	<label class="label" ng-show="about.post.category == 'question'"> Question </label>
 	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'question'"></textarea>
+
 	<label class="label" ng-model="about.post.content" ng-show="about.post.category == 'status'"> Status Update </label>
 	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'status'"></textarea>
+
 	<label class="label" ng-model="about.post.content" ng-show="about.post.category == 'code'"> Code Snippet </label>
-	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'code'" ng-show="about.post.category == 'video'"></textarea>
-	<input type="url" name="code_url" ng-show="about.post.category == 'video'" >
+	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'code'" ng-show="about.post.category == 'code'"></textarea>
+
+	<label class="label" ng-show="about.post.category == 'video'"> You-Tube Video </label>
+	<input type="url" name="code_url" ng-model="about.post.content" ng-show="about.post.category == 'video'" >
 	<button type="submit"> Add Post </button>
 
 
@@ -25,8 +29,8 @@
 <div>
 	<di  ng-repeat = "post in about.posts">
 	<div class = "styling_display" >
-	<div id="title" ui-sref="root.user.class.postDetails({id: post.id,class_id:post.class_id})">Title: {{post.title}}</div>
-	<div id="category"> Category : {{post.category}}</div>
+		<div id="title" ui-sref="root.user.class.postDetails({id: post.id,class_id:post.class_id})">Title: {{post.title}}</div>
+		<div id="category"> Category : {{post.category}}</div>
 	</div>
 	
 </div>
