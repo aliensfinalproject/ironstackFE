@@ -11,6 +11,8 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getPost = getPost;
   this.addPost = addPost;
   this.userPost= userPost;
+  this.addComment = addComment;
+  this.getComments = getComments;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
   this.setUser = setUser;
@@ -53,6 +55,12 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   function userPost(){
     return $http.get(`${SERVER}/users/me/posts`,{headers:getHeaders()});
   }
+  function addComment(comment,post_id){
+    return $http.post(`${SERVER}/post/${post_id}/comment`,comment,{headers:getHeaders()});
+ }
+ function getComments(post_id){
+  return $http.get(`${SERVER}/post/${post_id}/comments`,{headers:getHeaders()});
+ }
 
   function isLoggedIn () {
     return $cookies.get('username') ? true : false;

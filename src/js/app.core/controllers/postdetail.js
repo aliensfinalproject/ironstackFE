@@ -5,7 +5,6 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 	vm.getPostDetails = function(){
 		UserService.getPost($stateParams.class_id,$stateParams.id).then(
 			resp => {
-				console.log(resp);
 				vm.postDetails = resp.data
 				var str = vm.postDetails.content
 				var breakCode = str.split("=");
@@ -18,6 +17,14 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 
 	}
 	vm.getPostDetails();
+
+	vm.createComment = function(comment){	
+		UserService.addComment(comment, $stateParams.id).then(
+
+			resp =>{ 
+				console.log(resp);
+			})
+	}
 }
 PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce'];
 export{ PostDetailsController };

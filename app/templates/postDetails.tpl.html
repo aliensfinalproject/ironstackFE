@@ -28,6 +28,10 @@
 		
 </div>
 
-
+<form  ng-submit = "post.createComment(post.comment)">
+	<label class="label" > Comments </label>
+	<textarea class="textarea" ng-model = "post.comment.content"></textarea>
+	<button type="submit"> Add Comment </button>
+</form>
 
 <a ui-sref = "root.user.class.list"><button type="button" id="backbutton"> Back </button></a>
