@@ -1,7 +1,7 @@
 function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 	let vm = this;
 	vm.postDetails ={}
-	vm.comments ={}
+	vm.comments =[]
 	
 	vm.getPostDetails = function(){
 		UserService.getPost($stateParams.class_id,$stateParams.id).then(
@@ -33,6 +33,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 			resp => {
 				console.log(resp.data)
 				vm.comments = resp.data
+
 			})
 	}
 	vm.readComments();
