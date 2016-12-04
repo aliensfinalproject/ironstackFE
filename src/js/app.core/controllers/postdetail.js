@@ -1,6 +1,7 @@
 function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 	let vm = this;
 	vm.postDetails ={}
+	vm.comments ={}
 	
 	vm.getPostDetails = function(){
 		UserService.getPost($stateParams.class_id,$stateParams.id).then(
@@ -23,8 +24,18 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 
 			resp =>{ 
 				console.log(resp);
+				vm.readComments();
 			})
 	}
+
+	vm.readComments = function(){
+		UserService.getComments($stateParams.id).then(
+			resp => {
+				console.log(resp.data)
+				vm.comments = resp.data
+			})
+	}
+	vm.readComments();
 }
 PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce'];
 export{ PostDetailsController };
