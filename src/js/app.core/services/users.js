@@ -7,6 +7,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.addingClass = addingClass;
   this.getUsers = getUsers;
   this.deleteUser = deleteUser;
+  this.getPosts = getPosts;
   this.getPost = getPost;
   this.addPost = addPost;
   this.userPost= userPost;
@@ -43,8 +44,11 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   function addPost(post, class_id){
     return $http.post(`${SERVER}/class/${class_id}/post`,post,{headers:getHeaders()});
   }
-  function getPost(class_id){
+  function getPosts(class_id){
     return $http.get(`${SERVER}/class/${class_id}/posts`,{headers:getHeaders()});
+  }
+  function getPost(class_id,post_id){
+    return $http.get(`${SERVER}/class/${class_id}/post/${post_id}`,{headers:getHeaders()});
   }
   function userPost(){
     return $http.get(`${SERVER}/users/me/posts`,{headers:getHeaders()});

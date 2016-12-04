@@ -14,7 +14,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams){
 
 	}
 	vm.readPost = function(){
-		UserService.getPost($stateParams.id).then(
+		UserService.getPosts($stateParams.id).then(
 			resp => {
 				vm.posts = resp.data
 

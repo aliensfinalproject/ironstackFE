@@ -38,6 +38,12 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     controller: 'AboutController as about',
     params: {id:null}
    })
+    .state('root.user.class.postDetails', {
+    url: '/postDetails',
+    templateUrl: 'templates/postDetails.tpl.html',
+    controller: 'PostDetailsController as post',
+    params: {id:null,class_id:null}
+   })
 
     .state('root.user.class.add', {
     url: '/add',

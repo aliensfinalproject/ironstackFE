@@ -1,20 +1,38 @@
 <h1></h1>
 <h1>All Posts</h1>
 
-<form ng-submit = "about.createPost()">
+<form class="styling_form" ng-submit = "about.createPost()">
 	<label class="label"> Title </label>
     <input class="input" type="text" ng-model ="about.post.title">
-	<label class="label"> Content </label>
-	<textarea class="textarea" ng-model="about.post.content"></textarea>
+    <select class="styling_select" value = "category" ng-model ="about.post.category" >
+	  <option value="" disabled selected>Please Select Category...</option>
+	  <option value="question">Questions</option>
+	  <option value="video">You-Tube Video tutorials</option>
+	  <option value="code">Code snippets</option>
+	  <option value="status">Status Update</option>
+	</select>
+	<label class="label" ng-show="about.post.category == 'question'"> Question </label>
+	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'question'"></textarea>
+
+	<label class="label" ng-model="about.post.content" ng-show="about.post.category == 'status'"> Status Update </label>
+	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'status'"></textarea>
+
+	<label class="label" ng-model="about.post.content" ng-show="about.post.category == 'code'"> Code Snippet </label>
+	<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'code'" ng-show="about.post.category == 'code'"></textarea>
+
+	<label class="label" ng-show="about.post.category == 'video'"> You-Tube Video </label>
+	<input type="url" name="code_url" ng-model="about.post.content" ng-if="about.post.category == 'video'" >
 	<button type="submit"> Add Post </button>
+
 
 </form>
 <div>
-	<div ng-repeat = "post in about.posts">
-	<div>Title: {{post.title}}</div>
-	<div>Content: {{post.content}}</div>
+	<di  ng-repeat = "post in about.posts">
+	<div class = "styling_display" >
+		<div id="title" ui-sref="root.user.class.postDetails({id: post.id,class_id:post.class_id})">Title: {{post.title}}</div>
+		<div id="category"> Category : {{post.category}}</div>
 	</div>
-
+	
 </div>
 
 

@@ -2,8 +2,8 @@
 
 <div>
 	<div ng-repeat = "userpost in home.userposts">
-	<div>Title: {{userpost.title}}</div>
-	<div>Content: {{userpost.content}}</div>
+	<div id="title" ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"><div>Title: {{userpost.title}}</div></div>
+	<div>Category: {{userpost.category}}</div>
 	</div>
 
 </div>
