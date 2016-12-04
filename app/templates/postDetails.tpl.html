@@ -2,8 +2,8 @@
   <article class="message is-info">
   <div class="message-header">Question</div>
   <div class="message-body">
-    <div> {{post.postDetails.title}}</div>
-	<div> {{post.postDetails.content}}</div>
+    <div> Title:{{post.postDetails.title}}</div>
+	<div> Comment:{{post.postDetails.content}}</div>
   </div>
 </article>
 </div>
@@ -23,7 +23,7 @@
 
 <div ng-if="post.postDetails.category == 'code'">
 		<div> Title:{{post.postDetails.title}}</div>
-		<pre class="prettyprint"><code class="language-java">Title: {{post.postDetails.content}}</code></pre>
+		<pre class="prettyprint"><code class="language-java">Content: {{post.postDetails.content}}</code></pre>
 
 		
 </div>
