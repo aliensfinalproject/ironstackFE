@@ -33,7 +33,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 			resp => {
 				console.log(resp.data)
 				vm.comments = resp.data
-
+				prettyPrint()
 			})
 	}
 	vm.readComments();

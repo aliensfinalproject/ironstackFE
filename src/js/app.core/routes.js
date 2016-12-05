@@ -33,13 +33,13 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     controller: 'ClassController as class'
    })
    .state('root.user.class.about', {
-    url: '/about',
+    url: '/about/:id',
     templateUrl: 'templates/about.tpl.html',
     controller: 'AboutController as about',
     params: {id:null}
    })
     .state('root.user.class.postDetails', {
-    url: '/postDetails',
+    url: '/postDetails/:class_id/:id',
     templateUrl: 'templates/postDetails.tpl.html',
     controller: 'PostDetailsController as post',
     params: {id:null,class_id:null}
