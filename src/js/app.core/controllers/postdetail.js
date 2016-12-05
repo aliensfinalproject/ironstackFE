@@ -23,7 +23,6 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 		UserService.addComment(comment, $stateParams.id).then(
 
 			resp =>{ 
-				console.log(resp);
 				vm.readComments();
 				vm.comment ="";
 			})
@@ -38,6 +37,13 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 			})
 	}
 	vm.readComments();
+
+	vm.removeComment = function(post_id,id){
+		UserService.deleteComment(post_id,id).then(
+			resp =>{
+				vm.readComments();
+			})
+	}
 }
 PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce'];
 export{ PostDetailsController };

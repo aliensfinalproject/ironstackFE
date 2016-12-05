@@ -11,6 +11,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getPost = getPost;
   this.addPost = addPost;
   this.deletePost = deletePost;
+  this.deleteComment = deleteComment;
   this.userPost= userPost;
   this.addComment = addComment;
   this.getComments = getComments;
@@ -64,6 +65,9 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
  }
  function getComments(post_id){
   return $http.get(`${SERVER}/post/${post_id}/comments`,{headers:getHeaders()});
+ }
+ function deleteComment(post_id,id){
+  return $http.delete(`${SERVER}/post/${post_id}/comments/${id}`,{headers:getHeaders()});
  }
 
   function isLoggedIn () {
