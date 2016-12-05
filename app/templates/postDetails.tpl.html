@@ -28,6 +28,18 @@
 		
 </div>
 
-
+<form  ng-submit = "post.createComment(post.comment)">
+	<label class="label" > Comments </label>
+	<textarea class="textarea" ng-model = "post.comment.content"></textarea>
+	<button type="submit"> Add Comment </button>
+</form>
+<div>
+	<di  ng-repeat = "comment in post.comments">
+	<div class = "styling_display_comment" >
+		<div id="category"> Comment : {{comment.content}}</div>
+		<button type="button" ng-click = "post.removeComment(comment.post_id,comment.id)"> Delete Comment </button></a>
+	</div>
+	
+</div>
 
 <a ui-sref = "root.user.class.list"><button type="button" id="backbutton"> Back </button></a>

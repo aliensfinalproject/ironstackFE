@@ -1,11 +1,11 @@
 function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 	let vm = this;
 	vm.postDetails ={}
+	vm.comments =[]
 	
 	vm.getPostDetails = function(){
 		UserService.getPost($stateParams.class_id,$stateParams.id).then(
 			resp => {
-				console.log(resp);
 				vm.postDetails = resp.data
 				var str = vm.postDetails.content
 				var breakCode = str.split("=");
@@ -18,6 +18,32 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 
 	}
 	vm.getPostDetails();
+
+	vm.createComment = function(comment){	
+		UserService.addComment(comment, $stateParams.id).then(
+
+			resp =>{ 
+				vm.readComments();
+				vm.comment ="";
+			})
+	}
+
+	vm.readComments = function(){
+		UserService.getComments($stateParams.id).then(
+			resp => {
+				console.log(resp.data)
+				vm.comments = resp.data
+
+			})
+	}
+	vm.readComments();
+
+	vm.removeComment = function(post_id,id){
+		UserService.deleteComment(post_id,id).then(
+			resp =>{
+				vm.readComments();
+			})
+	}
 }
 PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce'];
 export{ PostDetailsController };

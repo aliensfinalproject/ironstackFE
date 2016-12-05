@@ -10,7 +10,11 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getPosts = getPosts;
   this.getPost = getPost;
   this.addPost = addPost;
+  this.deletePost = deletePost;
+  this.deleteComment = deleteComment;
   this.userPost= userPost;
+  this.addComment = addComment;
+  this.getComments = getComments;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
   this.setUser = setUser;
@@ -50,9 +54,21 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   function getPost(class_id,post_id){
     return $http.get(`${SERVER}/class/${class_id}/post/${post_id}`,{headers:getHeaders()});
   }
+  function deletePost(class_id,post_id){
+    return $http.delete(`${SERVER}/class/${class_id}/post/${post_id}`,{headers:getHeaders()});
+  }
   function userPost(){
     return $http.get(`${SERVER}/users/me/posts`,{headers:getHeaders()});
   }
+  function addComment(comment,post_id){
+    return $http.post(`${SERVER}/post/${post_id}/comment`,comment,{headers:getHeaders()});
+ }
+ function getComments(post_id){
+  return $http.get(`${SERVER}/post/${post_id}/comments`,{headers:getHeaders()});
+ }
+ function deleteComment(post_id,id){
+  return $http.delete(`${SERVER}/post/${post_id}/comments/${id}`,{headers:getHeaders()});
+ }
 
   function isLoggedIn () {
     return $cookies.get('username') ? true : false;
