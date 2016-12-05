@@ -25,6 +25,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 			resp =>{ 
 				console.log(resp);
 				vm.readComments();
+				vm.comment ="";
 			})
 	}
 

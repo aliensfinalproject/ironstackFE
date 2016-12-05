@@ -23,17 +23,18 @@
 	<label class="label" ng-show="about.post.category == 'video'"> You-Tube Video </label>
 	<input type="url" name="code_url" ng-model="about.post.content" ng-if="about.post.category == 'video'" >
 	<button type="submit"> Add Post </button>
+	</form>
 
 
-</form>
-<div>
-	<di  ng-repeat = "post in about.posts">
+
+
+	<div ng-repeat = "post in about.posts">
 	<div class = "styling_display" >
-		<div id="title" ui-sref="root.user.class.postDetails({id: post.id,class_id:post.class_id})">Title: {{post.title}}</div>
-		<div id="category"> Category : {{post.category}}</div>
+		<div class="styling_title" ui-sref="root.user.class.postDetails({id: post.id,class_id:post.class_id})">Title: {{post.title}}</div>
+		<div class="styling_category"> Category : {{post.category}}</div>
 	</div>
 	
-</div>
+	</div>
 
 
 <a ui-sref = "root.user.class.list"><button type="button" id="backbutton"> Back </button></a>

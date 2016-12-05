@@ -9,6 +9,15 @@ function HomeController(UserService,$state,$rootScope){
 			})
 	}
 	vm.displayPosts();
+
+	vm.removePost = function(class_id,post_id){
+		UserService.deletePost(class_id,post_id).then(
+			resp =>{
+				console.log(resp)
+				vm.displayPosts();
+
+			})
+	}
 }
 
 

@@ -10,6 +10,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getPosts = getPosts;
   this.getPost = getPost;
   this.addPost = addPost;
+  this.deletePost = deletePost;
   this.userPost= userPost;
   this.addComment = addComment;
   this.getComments = getComments;
@@ -51,6 +52,9 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   }
   function getPost(class_id,post_id){
     return $http.get(`${SERVER}/class/${class_id}/post/${post_id}`,{headers:getHeaders()});
+  }
+  function deletePost(class_id,post_id){
+    return $http.delete(`${SERVER}/class/${class_id}/post/${post_id}`,{headers:getHeaders()});
   }
   function userPost(){
     return $http.get(`${SERVER}/users/me/posts`,{headers:getHeaders()});
