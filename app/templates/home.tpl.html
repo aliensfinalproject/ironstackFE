@@ -1,29 +1,33 @@
+<div class="box">
 
-<table class = "styleHome" style="width:100%">
-  <tr>
-    <th class= "style_Htag"> My Posts</th>
+  <table class = "styleHome" style="width:100%">
+    <tr>
+      <th class= "style_Htag"> My Posts</th>
+    </tr>
+    <tr class = "box" ng-repeat = "userpost in home.userposts">
+      <td>
+        <ul>
+        <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"><div class="button is-success">Title</div> {{userpost.title}}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+        <li><div class="button is-success">Category</div>{{userpost.category}}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+        <li<div><button class = "button is-dark" type="button"  ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div></a></li>
+        </ul>
+      </td>
   </tr>
-  <tr ng-repeat = "userpost in home.userposts">
-    <td>
-      <ul> 
-      <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"><div class="styleTags">Title</div> {{userpost.title}}</li>
-      </ul>
-    </td>
-    <td>
-      <ul> 
-      <li><div class="styleTags">Category</div>{{userpost.category}}</li>
-      </ul>
-    </td>
-    <td>
-      <ul> 
-      <li<div><button  type="button"  ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div></a></li>
-      </ul>
-    </td>
-</tr>
- 
-</table>
+
+  </table>
 
 
 
 
-<a ui-sref = "root.user.class.list"><button type="button" id ="backbutton"> Back </button></a>
+  <a ui-sref = "root.user.class.list"><button class = "button is-dark" type="button" id ="backbutton"> Back </button></a>
+
+
+</div>
