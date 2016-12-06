@@ -1,13 +1,4 @@
 
-
-<!--<div>
-	<div ng-repeat = "userpost in home.userposts">
-	<div class="styling_title" ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"><div>Title: {{userpost.title}}</div></div>
-	<div class= "styling_category">Category: {{userpost.category}}</div>
-	<div><button type="button" id="backbutton" ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div>
-	</div>
-
-</div>-->
 <table class = "styleHome" style="width:100%">
   <tr>
     <th class= "style_Htag"> My Posts</th>
@@ -15,12 +6,12 @@
   <tr ng-repeat = "userpost in home.userposts">
     <td>
       <ul> 
-      <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"><div class="styleCaptions">Title</div> {{userpost.title}}</li>
+      <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"><div class="styleTags">Title</div> {{userpost.title}}</li>
       </ul>
     </td>
     <td>
       <ul> 
-      <li><div class="styleCaptions">Category</div>{{userpost.category}}</li>
+      <li><div class="styleTags">Category</div>{{userpost.category}}</li>
       </ul>
     </td>
     <td>
