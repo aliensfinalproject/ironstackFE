@@ -15,12 +15,12 @@
   <tr ng-repeat = "userpost in home.userposts">
     <td>
       <ul> 
-      <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})">Title: {{userpost.title}}</li>
+      <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"><div class="styleCaptions">Title</div> {{userpost.title}}</li>
       </ul>
     </td>
     <td>
       <ul> 
-      <li>Category : {{userpost.category}}</li>
+      <li><div class="styleCaptions">Category</div>{{userpost.category}}</li>
       </ul>
     </td>
     <td>
