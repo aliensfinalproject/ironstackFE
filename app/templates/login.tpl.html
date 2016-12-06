@@ -1,31 +1,38 @@
-<div class = "box font">
+<div class="box">
 
-  <h3 class="title">Login</h3>
-
-  <form name="login-form" ng-submit="login.activate(user)">
-   <p class="control">
-     <input class = "font" name="username" type="text" placeholder="Username"
-            ng-model="user.username" required />
-   </p>
-
-   <p class="control">
-     <input class = "font" name="password" type="password" placeholder="Password"
-            ng-model="user.password" required />
-   </p>
-
-   <p>
-     {{ login.error }}
-   </p>
-   <button class = "font button is-primary">Let's Do It!</button>
-
-  </form>
-
-  <div class="new-member">
-
-    <div>Not a member?</div>
-    <a href = "#/register"><button class = "font button is-warning">Register</button></a>
+  <div class="card is-fullwidth">
+      <section class="hero is-dark">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">
+              Log In
+            </h1>
+          </div>
+        </div>
+      </section>
+    <div class="card-content">
+      <div class="content section">
+        <form name="login-form" ng-submit="login.activate(user)">
+          <p class="control">
+            <input class = "input" name="username" type="text" placeholder="Username"
+                   ng-model="user.username" required />
+          </p>
+          <p class="control">
+            <input class = "input" name="password" type="password" placeholder="Password"
+                   ng-model="user.password" required />
+          </p>
+          <p>
+            {{ login.error }}
+          </p>
+          <button class = "button is-dark">Let's Do It!</button>
+        </form>
+      </div>
+    </div>
+    <p class="hero is-dark section">
+      <span>Not a member?</span>
+      <a href = "#/register"><button class = "button is-dark is-medium">Register</button></a>
+    </p>
 
   </div>
-
 
 </div>
