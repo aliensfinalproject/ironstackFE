@@ -65,6 +65,16 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     controller: 'HomeController as home'
    })
 
+   .state('root.user.enabledassignments', {
+   url: '/users',
+   templateUrl: 'templates/enabledassignments.tpl.html',
+   controller: 'EnabledAssignmentsController as enabled'
+  })
+  .state('root.user.addassignment', {
+   url:'/addassignment',
+   templateUrl: 'templates/addassignment.tpl.html',
+   controller: 'AddAssignmentController as addassignment'
+  })
 
  $urlRouterProvider.otherwise('/login');
 };

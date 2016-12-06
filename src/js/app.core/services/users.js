@@ -21,6 +21,9 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.setUser = setUser;
   this.logout = logout;
   this.getHeaders = getHeaders;
+  this.addAssignment = addAssignment;
+  this.getAssignments = getAssignments;
+  this.deleteAssignment = deleteAssignment;
 
   function create (user) {
     return $http.post(`${SERVER}/register`, user);
@@ -74,6 +77,16 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
  function deleteComment(post_id,id){
   return $http.delete(`${SERVER}/post/${post_id}/comments/${id}`,{headers:getHeaders()});
  }
+
+ function addAssignment(assignment){
+   return $http.post(`${SERVER}/assignment`,assignment,{headers:getHeaders()});
+}
+function getAssignments(){
+ return $http.get(`${SERVER}/assignments`, {headers:getHeaders()});
+}
+function deleteAssignment (id) {
+ return $http.delete(`${SERVER}/assignment/${id}`, {headers:getHeaders()});
+}
 
   function isLoggedIn () {
     return $cookies.get('username') ? true : false;
