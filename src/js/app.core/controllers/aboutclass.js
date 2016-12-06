@@ -16,12 +16,20 @@ function AboutController(UserService,$state,$rootScope,$stateParams){
 	vm.readPost = function(){
 		UserService.getPosts($stateParams.id).then(
 			resp => {
+				console.log(resp)
 				vm.posts = resp.data
 
 			})
 	}
 	vm.readPost();
+	vm.removePost = function(class_id,id){
+		console.log('hi')
+		UserService.deletePost(class_id,id).then(
+			resp =>{
+				vm.readPost();
+			})
 	
+}
 }
 
 

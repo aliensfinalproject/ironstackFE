@@ -32,6 +32,7 @@
 	<div class = "styling_display" >
 		<div class="styling_title" ui-sref="root.user.class.postDetails({id: post.id,class_id:post.class_id})">Title: {{post.title}}</div>
 		<div class="styling_category"> Category : {{post.category}}</div>
+		<button type="button" ng-click = "about.removePost(post.class_id,post.id)"> Delete Post </button></a>
 	</div>
 	
 	</div>
