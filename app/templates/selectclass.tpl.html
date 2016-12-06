@@ -1,10 +1,17 @@
  
-<form>
- <select class="styling_select" value = "category" ng-model ="about.post.category" >
-	  <option value="" disabled selected>Please Select Category...</option>
-	  <option value="question">Questions</option>
-	  <option value="video">You-Tube Video tutorials</option>
-	  <option value="code">Code snippets</option>
-	  <option value="status">Status Update</option>
+<form class="styling_form" ng-submit = "select.selectclass(clazz)">
+ <select class="styling_select" value = "class" ng-model ="clazz.className">
+	  <option value="" disabled selected>Please Select Class..</option>
+
+	  <option value="{{classOption.className}}" ng-repeat = "classOption in select.classOptions" >{{classOption.className}}</option>
 	</select>
+	<select class="styling_select" value = "class" ng-model ="clazz.instructor">
+	  <option value="" disabled selected >Please Select Instructor ...</option>
+	  <option value="{{classOption.instructor}}" ng-repeat = "classOption in select.classOptions">{{classOption.instructor}}</option>
+	</select>
+	<select class="styling_select" value = "class" ng-model ="clazz.campus">
+	  <option value="" disabled selected>Please Select Campus ...</option>
+	  <option value="{{classOption.campus}}" ng-repeat = "classOption in select.classOptions"> {{classOption.campus}}</option>
+	</select>
+	<button type="submit"> Add Class </button>
 	</form>

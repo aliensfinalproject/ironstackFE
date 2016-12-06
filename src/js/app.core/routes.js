@@ -23,6 +23,10 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/layout.tpl.html',
       controller: 'LayoutController as layout'
    })
+    .state('root.user.selectclass', {
+      templateUrl: 'templates/selectclass.tpl.html',
+      controller: 'SelectClassController as select'
+   })
    .state('root.user.class', {
     url: '/class',
     template: '<ui-view></ui-view>'
