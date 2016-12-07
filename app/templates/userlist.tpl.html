@@ -1,32 +1,38 @@
-<table style="width:100%">
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th> 
-  </tr>
-  <tr ng-repeat = "listuser in userlist.listusers">
-    <td>
-      <ul> 
-      <li>{{listuser.firstName}}</li>
-      </ul>
-    </td>
-    <td>
-      <ul> 
-      <li>{{listuser.lastName}}</li>
-      </ul>
-    </td>
-    <td>
-      <ul> 
-      <li><button type="button" id ="backbutton" ng-click="userlist.makeAdmin(listuser.id)"> Make Admin </button></li>
-      </ul>
+<div class="box">
+
+  <table class = "table is-striped" style="width:100%">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Upgrade</th>
+      <th>Delete</th>
+    </tr>
+    <tr ng-repeat = "listuser in userlist.listusers">
+      <td>
+        <ul>
+        <li>{{listuser.firstName}}</li>
+        </ul>
       </td>
       <td>
-      <ul> 
-      <li><button type="button" id ="backbutton" ng-click="userlist.deleteUser(listuser.id)"> Delete User </button></li>
-      </ul>
-    </td>
-</tr>
- 
-</table>
+        <ul>
+        <li>{{listuser.lastName}}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+        <li><button class = "button is-success" type="button" id ="backbutton" ng-click="userlist.makeAdmin(listuser.id)"> Make Admin </button></li>
+        </ul>
+        </td>
+        <td>
+        <ul>
+        <li><button class = "button is-danger" type="button" id ="backbutton" ng-click="userlist.deleteUser(listuser.id)"> Delete User </button></li>
+        </ul>
+      </td>
+  </tr>
 
-<a ui-sref = "root.user.class.list"><button type="button" id ="backbutton"> Back </button></a>
-</form>
+  </table>
+
+  <a ui-sref = "root.user.class.list"><button class = "button is-dark" type="button" id ="backbutton"> Back </button></a>
+  </form>
+
+</div>
