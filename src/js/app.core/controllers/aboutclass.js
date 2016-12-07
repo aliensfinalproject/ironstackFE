@@ -3,6 +3,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams){
 	vm.post = {}
 	vm.posts = [];
 
+
 	vm.createPost = function(){
 		UserService.addPost(vm.post, $stateParams.id).then(
 			resp =>{
@@ -27,7 +28,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams){
 			resp =>{
 				vm.readPost();
 			})
-	
+
 }
 }
 

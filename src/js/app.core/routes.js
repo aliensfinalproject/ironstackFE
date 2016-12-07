@@ -65,13 +65,13 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     controller: 'HomeController as home'
    })
 
-   .state('root.user.enabledassignments', {
+   .state('root.user.class.about.enabledassignments', {
    url: '/enabledassignments',
    templateUrl: 'templates/enabledassignments.tpl.html',
    controller: 'EnabledAssignmentsController as enabled'
   })
-  .state('root.user.addassignment', {
-   url:'/addassignment',
+  .state('root.user.class.addassignment', {
+   url:'/addassignment/:id',
    templateUrl: 'templates/addassignment.tpl.html',
    controller: 'AddAssignmentController as addassignment'
   })

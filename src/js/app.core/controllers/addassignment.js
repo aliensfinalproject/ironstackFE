@@ -3,13 +3,13 @@ function AddAssignmentController(UserService,$state,$rootScope,$scope, $statePar
    vm.list = [];
    ;
 
-   vm.addassignment = function(assignment){
-	 	UserService.addAssignment(assignment).then(
+   vm.addassignment = function(assignment ){
+	 	UserService.addAssignment(assignment, $stateParams).then(
 	 		resp => {
-        assignment.class_id = $stateParams._id
+        assignment.class_id = $stateParams.id
         console.log(resp.data)
-        console.log ()
-	 			$state.go('root.user.addassignment')
+        console.log ($stateParams.id)
+	 			$state.go('root.user.class.about.addassignment')
 	 		})
 	 }
 
