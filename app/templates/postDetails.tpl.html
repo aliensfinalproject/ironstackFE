@@ -13,10 +13,12 @@
 	</div>
 </div>
 
-<div ng-if="post.postDetails.category == 'video'">
-		<div> Title:{{post.postDetails.title}}</div>
-		<iframe width="560" height="315" ng-src="{{post.display_url}}"frameborder="0" allowfullscreen></iframe>
-		
+<div id="videoTitle" ng-if="post.postDetails.category == 'video'">
+	<article class="message is-warning">
+	  	<div class="message-header">Title:{{post.postDetails.title}}
+		<div id="videoBox" ><iframe width="560" height="315" ng-src="{{post.display_url}}"frameborder="0" allowfullscreen></iframe></div>
+		</div>
+	</article>
 </div>
 
 <div ng-if="post.postDetails.category == 'code'">
