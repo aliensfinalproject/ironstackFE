@@ -4,6 +4,8 @@ function AboutController(UserService,$state,$rootScope,$stateParams){
 	vm.posts = [];
 	vm.questions = [];
 	vm.videos = [];
+	vm.codes = [];
+	vm.statuses = [];
 
 	vm.createPost = function(){
 		UserService.addPost(vm.post, $stateParams.id).then(
@@ -26,7 +28,13 @@ function AboutController(UserService,$state,$rootScope,$stateParams){
 				vm.videos = vm.posts.filter(function(post){
 					return post.category === 'video';
 				})
-			
+				vm.codes = vm.posts.filter(function(post){
+					return post.category === 'code';
+				})
+				vm.statuses = vm.posts.filter(function(post){
+					return post.category === 'status';
+				})
+
 
 			})
 	}

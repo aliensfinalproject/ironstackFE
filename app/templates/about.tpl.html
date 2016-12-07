@@ -104,6 +104,78 @@
 
 </div>
 
+<div class="box">
+
+  <table class = "table is-striped" style="width:100%">
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Delete</th>
+    </tr>
+    <tr ng-repeat = "code in about.codes" >
+      <td>
+        <ul>
+        <li ui-sref= "root.user.class.postDetails({id: code.id,class_id:code.class_id})">{{code.title}}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+        <li>{{code.category}}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+        <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(post.class_id,post.id)"> Delete Post </button></div></a></li>
+        </ul>
+      </td>
+  </tr>
+
+  </table>
+
+
+
+  <a ui-sref = "root.user.class.list"><button class="button is-dark" type="button" id="backbutton"> Back </button></a>
+
+
+</div>
+
+<div class="box">
+
+  <table class = "table is-striped" style="width:100%">
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Delete</th>
+    </tr>
+    <tr ng-repeat = "status in about.statuses" >
+      <td>
+        <ul>
+        <li ui-sref= "root.user.class.postDetails({id: status.id,class_id:status.class_id})">{{status.title}}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+        <li>{{status.category}}</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+        <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(post.class_id,post.id)"> Delete Post </button></div></a></li>
+        </ul>
+      </td>
+  </tr>
+
+  </table>
+
+
+
+  <a ui-sref = "root.user.class.list"><button class="button is-dark" type="button" id="backbutton"> Back </button></a>
+
+
+</div>
+
+
+
 
 
 </div>
