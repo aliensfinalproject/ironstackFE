@@ -4,7 +4,7 @@
 
     <h1></h1>
     <h1  class= "style_Htag" >Add Post</h1>
-     <select class="styling_selectcategory" value = "category" ng-model ="about.post.category" >
+     <select class="styling_selectcategory" value = "category" ng-model ="about.post.category" required>
         <option value="" disabled selected>Please Select Category...</option>
         <option value="question">Questions</option>
         <option value="video">You-Tube Video tutorials</option>
@@ -14,19 +14,19 @@
     <div class ="form_div">
       <form class="styling_aboutform" ng-submit = "about.createPost()">
         <label class="label" ng-show = "about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'"> Title </label>
-          <input class="input" type="text" ng-model ="about.post.title" ng-show = "about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'">
+          <input class="input" type="text" ng-model ="about.post.title" ng-show = "about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'" required>
 
         <label class="label" ng-show="about.post.category == 'question'"> Question </label>
-        <textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'question'"></textarea>
+        <textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'question'" required></textarea>
 
         <label class="label" ng-model="about.post.content" ng-show="about.post.category == 'status'"> Status Update </label>
-        <textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'status'"></textarea>
+        <textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'status'" required></textarea>
 
         <label class="label" ng-model="about.post.content" ng-show="about.post.category == 'code'"> Code Snippet </label>
-        <textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'code'" ng-show="about.post.category == 'code'"></textarea>
+        <textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'code'" ng-show="about.post.category == 'code'" required></textarea>
 
         <label class="label" ng-show="about.post.category == 'video'"> You-Tube Video </label>
-        <input type="url" name="code_url" ng-model="about.post.content" ng-if="about.post.category == 'video'" >
+        <input type="url" name="code_url" ng-model="about.post.content" ng-if="about.post.category == 'video'" required>
         <button class = "button is-dark" type="submit" id ="styleAddPostButton"> Post </button>
       </form>
     </div>
