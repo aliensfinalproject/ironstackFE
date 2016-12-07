@@ -1,3 +1,4 @@
+<div class = "box">
 <div ng-if="post.postDetails.category == 'question'">
   <article  id ="styleQuestion" class="message is-info">
   <div id="questionTitle" class="message-header">Title:{{post.postDetails.title}} </div>
@@ -30,15 +31,16 @@
 <form  ng-submit = "post.createComment(post.comment)">
 	<label class= "style_Htag" class="label" > Comments </label>
 	<textarea class="textarea" ng-model = "post.comment.content"></textarea>
-	<button id="styleAddCommentButton" type="submit"> Add Comment </button>
+	<button class="button is-dark" id="styleAddCommentButton" type="submit"> Add Comment </button>
 </form>
 
 <div  ng-repeat = "comment in post.comments">
 	<div id = "styling_display_comment" class ="box" >
 		<div id="styleComment">{{comment.content}}</div>
-		<div id = "stlyeDeleteCommentButton"><button class="button is-dark" type="button" ng-click = "post.removeComment(comment.post_id,comment.id)"> Delete Comment </button></div>
+		<div id = "stlyeDeleteCommentButton"><button class="button is-danger" type="button" ng-click = "post.removeComment(comment.post_id,comment.id)"> Delete Comment </button></div>
 	</div>
 	
 </div>
 
-<a ui-sref = "root.user.class.list"><button type="button" id="backbutton"> Back </button></a>
+<a ui-sref = "root.user.class.list"><button class="button is-dark" type="button" id="backbutton"> Back </button></a>
+</div>
