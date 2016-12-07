@@ -79,7 +79,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
  }
 
  function addAssignment(assignment){
-   return $http.post(`${SERVER}/assignment`,assignment,{headers:getHeaders()});
+   return $http.post(`${SERVER}/assignment/`, assignment,  {headers:getHeaders()});
 }
 function getAssignments(){
  return $http.get(`${SERVER}/assignments`, {headers:getHeaders()});

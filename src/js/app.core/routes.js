@@ -66,7 +66,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
    })
 
    .state('root.user.enabledassignments', {
-   url: '/users',
+   url: '/enabledassignments',
    templateUrl: 'templates/enabledassignments.tpl.html',
    controller: 'EnabledAssignmentsController as enabled'
   })

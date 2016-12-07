@@ -17,6 +17,8 @@ import { AboutController } from "./controllers/aboutclass"
 import { HomeController } from "./controllers/home"
 import { PostDetailsController }from "./controllers/postdetail"
 import { SelectClassController } from "./controllers/selectclass"
+import { AddAssignmentController } from "./controllers/addassignment"
+import { EnabledAssignmentsController } from "./controllers/enableassignments"
 
 angular
  .module('app.core', ['ui.router', 'ngCookies'])
@@ -32,4 +34,6 @@ angular
  .controller('HomeController',HomeController)
  .controller('PostDetailsController',PostDetailsController)
  .controller('SelectClassController',SelectClassController)
+.controller('AddAssignmentController', AddAssignmentController)
+ .controller('EnabledAssignmentsController', EnabledAssignmentsController)
  .service('UserService', UserService);

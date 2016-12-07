@@ -1,0 +1,24 @@
+<h3 class="title">Add an Assignment</h3>
+
+<form name="assignment-form" ng-submit="addassignment.addassignment(addassignment.assignment)">
+  <p class="control">
+    <input  class= "input is-medium" type="text" placeholder="Assignment Name"
+           ng-model="addassignment.assignment.title" required />
+  </p>
+ <p class="control">
+   <input class= "input is-medium" type="text" placeholder="Week"
+          ng-model="addassignment.assignment.week" required />
+ </p>
+ <p class="control">
+   <textarea class= "input is-medium" type="textarea" placeholder="Assignment Description"
+          ng-model="addassignment.assignment.description"> </textarea>
+ </p>
+ <p class="control">Enable Assignment?
+   <input type="checkbox"
+          ng-model="addassignment.assignment.enabled" />
+ </p>
+<button class= "button is-outlined is-info" type= "submit"> Create Assignment</button>
+
+</form>
+<a ui-sref = "root.user.class.home"><button class= "button is-outlined is-info"> Back to Class Home </button></a>
+<a ui-sref = "root.user.enabledassignments"><button class= "button is-outlined is-info"> Assignment List </button></a>

@@ -1,0 +1,22 @@
+<h8>Enabled Assignments</h8>
+
+<ul id= "list">
+  <li ng-repeat="item in enabled.list">
+    <div id= "individual-enabled" class= "box">
+      <span id="assign-style">Assignment:
+      </span>
+        <span>{{item.title}}</span>
+        <div>
+          <!-- arbitrary break needs to be styled better -->
+        <span id= "week-style">Week:
+        </span>
+      <span>{{item.week}}</span>
+      <div>
+      <!-- arbitrary break, needs to be styled better -->
+  <button type="button" class= "button is-outlined is-info" ng-click="enabled.deleteassignment(item.id)"> Delete </button></a>
+  </div>
+  </li>
+</ul>
+
+<a ui-sref = "root.user.addassignment"><button class= "button is-outlined is-info"> Back to Add Assignments Form </button></a>
+<a ui-sref = "root.user.class.about"><button class= "button is-outlined is-info"> Back to Class Home </button></a>

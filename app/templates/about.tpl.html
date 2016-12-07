@@ -1,4 +1,7 @@
 <h1></h1>
+
+<div id="left-assignments"><a ui-sref = "root.user.addassignment"><button type="button"> Create Assignment </button></a></div>
+
 <h1  class= "style_Htag" >Add Post</h1>
  <select class="styling_selectcategory" value = "category" ng-model ="about.post.category" >
 	  <option value="" disabled selected>Please Select Category...</option>
@@ -11,7 +14,7 @@
 	<form class="styling_aboutform" ng-submit = "about.createPost()">
 		<label class="label" ng-show = "about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'"> Title </label>
 	    <input class="input" type="text" ng-model ="about.post.title" ng-show = "about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'">
-	   
+
 		<label class="label" ng-show="about.post.category == 'question'"> Question </label>
 		<textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'question'"></textarea>
 
@@ -33,22 +36,22 @@
   </tr>
   <tr ng-repeat = "post in about.posts">
     <td>
-      <ul> 
+      <ul>
       <li ui-sref= "root.user.class.postDetails({id: post.id,class_id:post.class_id})"> <div class="styleCaptions">Title</div> {{post.title}}</li>
       </ul>
     </td>
     <td>
-      <ul> 
+      <ul>
       <li><div class="styleCaptions">Category</div>{{post.category}}</li>
       </ul>
     </td>
     <td>
-      <ul> 
+      <ul>
       <li<div><button  type="button"  ng-click = "about.removePost(post.class_id,post.id)"> Delete Post </button></div></a></li>
       </ul>
     </td>
 </tr>
- 
+
 </table>
 
 
