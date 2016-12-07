@@ -1,33 +1,42 @@
-<table class="styleClassTable" style="width:100%">
-  <tr>
-    <th>Class</th>
-    <th>Instructor</th> 
-    <th>Campus</th>
-    <!--<th>Batch</th>-->
-  </tr>
-  <tr ng-repeat = "listclass in class.list">
-    <td>
-      <ul> 
-      <li  ui-sref= "root.user.class.about({id:listclass.id})">{{listclass.className}}</li>
-      </ul>
-    </td>
-    <td>
-      <ul> 
-      <li>{{listclass.instructor}}</li>
-      </ul>
-    </td>
-    <td>
-      <ul> 
-      <li>{{listclass.campus}}</li>
-      </ul>
-    </td>
-</tr>
- 
-</table>
+<div class="box">
 
-<div class="adminOption" ng-if="class.isAdmin">
-<a ui-sref = "root.user.class.add">Add Class</a>  
-</div>
-<div class="adminOption" ng-if ="class.isAdmin">
-<a ui-sref = "root.user.class.users">View Users</a>  
+  <div class="box">
+      <a ui-sref = "root.user.class.add">
+        <button class="button is-dark" ng-if="class.isAdmin">
+        Add Class</button>
+      </a>
+      <a ui-sref = "root.user.class.users">
+        <button class="button is-dark" ng-if ="class.isAdmin">
+        View Users</button>
+      </a>
+  </div>
+
+  <div class="box">
+    <table class="table is-striped" style="width:100%">
+      <tr>
+        <th>Class</th>
+        <th>Instructor</th>
+        <th>Campus</th>
+        <!--<th>Batch</th>-->
+      </tr>
+      <tr ng-repeat = "listclass in class.list">
+        <td>
+          <ul>
+          <li  ui-sref= "root.user.class.about({id:listclass.id})">{{listclass.className}}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+          <li>{{listclass.instructor}}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+          <li>{{listclass.campus}}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+
 </div>
