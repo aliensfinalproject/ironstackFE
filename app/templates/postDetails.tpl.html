@@ -15,17 +15,16 @@
 
 <div id="videoTitle" ng-if="post.postDetails.category == 'video'">
 	<article class="message is-warning">
-	  	<div class="message-header">Title:{{post.postDetails.title}}
+	  	<div class="message-header">Title:{{post.postDetails.title}}</div>
 		<div id="videoBox" ><iframe width="560" height="315" ng-src="{{post.display_url}}"frameborder="0" allowfullscreen></iframe></div>
-		</div>
 	</article>
 </div>
 
 <div ng-if="post.postDetails.category == 'code'">
-		<div> Title:{{post.postDetails.title}}</div>
-		<pre class="prettyprint">{{post.postDetails.content}}</pre>
-
-		
+	<article class="message">
+  		<div id="codeTitle" class="message-header"> Title:{{post.postDetails.title}}</div>
+		<div class="message-body"><pre class="prettyprint">{{post.postDetails.content}}</pre></div>
+	</article>	
 </div>
 
 <form  ng-submit = "post.createComment(post.comment)">
