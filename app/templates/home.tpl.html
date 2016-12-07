@@ -1,31 +1,34 @@
 <div class="box">
 
-  <table class = "styleHome" style="width:100%">
+  <section class = "hero is-dark section box">
+    <h1 class = "title is-2 nav-center">My Posts</h1>
+  </section>
+
+
+  <table class = "table is-striped" style="width:100%">
     <tr>
-      <th class= "style_Htag"> My Posts</th>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Delete</th>
     </tr>
-    <tr class = "box" ng-repeat = "userpost in home.userposts">
+    <tr ng-repeat = "userpost in home.userposts">
       <td>
         <ul>
-        <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"><div class="button is-success">Title</div> {{userpost.title}}</li>
+        <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"> {{userpost.title}}</li>
         </ul>
       </td>
       <td>
         <ul>
-        <li><div class="button is-success">Category</div>{{userpost.category}}</li>
+        <li>{{userpost.category}}</li>
         </ul>
       </td>
       <td>
         <ul>
-        <li<div><button class = "button is-dark" type="button"  ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div></a></li>
+        <li<div><button class = "button is-danger level-right" type="button"  ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div></a></li>
         </ul>
       </td>
-  </tr>
-
-  </table>
-
-
-
+    </tr>
+ </table>
 
   <a ui-sref = "root.user.class.list"><button class = "button is-dark" type="button" id ="backbutton"> Back </button></a>
 
