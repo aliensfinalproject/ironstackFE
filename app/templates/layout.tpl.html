@@ -1,20 +1,25 @@
-<header>
- <nav class="nav">
-   <div class="nav-left">
-     <a class="nav-item" href="#/">Iron Stack</a>
-   </div>
-   <div class="nav-right nav-menu">
-     <a class="nav-item" ui-sref="root.user.home">My Posts</a>
-     <a class="nav-item" href="#/register"
-        ng-show="!layout.loggedIn">Sign Up</a>
-     <a class="nav-item" href="#/login"
-        ng-show="!layout.loggedIn">Login</a>
-     <a class="nav-item" href="#/"
-        ng-show="layout.loggedIn"
-        ng-click="layout.logout()">Logout</a>
-   </div>
- </nav>
-</header>
+<div class="box">
 
-<div class="wrapper" ui-view>
+  <header>
+   <nav class="nav">
+     <div class="nav-left">
+       <a class="nav-item" href="#/">Iron Stack</a>
+     </div>
+     <div class="nav-right nav-menu">
+       <a class="nav-item" ui-sref="root.user.home">My Posts</a>
+       <a class="nav-item" href="#/register"
+          ng-show="!layout.loggedIn">Sign Up</a>
+       <a class="nav-item" href="#/login"
+          ng-show="!layout.loggedIn">Login</a>
+       <a class="nav-item" href="#/"
+          ng-show="layout.loggedIn"
+          ng-click="layout.logout()">Logout</a>
+     </div>
+   </nav>
+  </header>
+
+  <div class="wrapper" ui-view>
+  </div>
+
+
 </div>
