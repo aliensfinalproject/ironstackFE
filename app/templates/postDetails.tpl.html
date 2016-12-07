@@ -7,9 +7,9 @@
 </div>
 
 <div ng-if="post.postDetails.category == 'status'">
-	<div class="notification is-primary">
+	<div id="styleStatusContent" class="notification is-primary">
 		<!--<div> Title:{{post.postDetails.title}}</div>-->
-		<div class="styleStatusContent">{{post.postDetails.content}}</div>
+		<div>{{post.postDetails.content}}</div>
 	</div>
 </div>
 
@@ -33,9 +33,9 @@
 </form>
 
 <div  ng-repeat = "comment in post.comments">
-	<div class = "styling_display_comment" >
-		<div id="styleComment"> Comment : {{comment.content}}</div>
-		<div id = "stlyeDeleteCommentButton"><button type="button" ng-click = "post.removeComment(comment.post_id,comment.id)"> Delete Comment </button></div>
+	<div id = "styling_display_comment" class ="box" >
+		<div id="styleComment">{{comment.content}}</div>
+		<div id = "stlyeDeleteCommentButton"><button class="button is-dark" type="button" ng-click = "post.removeComment(comment.post_id,comment.id)"> Delete Comment </button></div>
 	</div>
 	
 </div>

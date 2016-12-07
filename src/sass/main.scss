@@ -80,12 +80,23 @@ a{
 
 }
 #stlyeDeleteCommentButton{
-  display: inline-block;
+  float: right;
 
 }
-.styleStatusContent{
+#styleStatusContent{
   font-size: 25px;
   font-family: 'Indie Flower', cursive;
+  margin-top: 10px;
+
+}
+#styling_display_comment{
+  font-size: 20px;
+  font-family: 'Indie Flower', cursive;
+  color:#363636;
+}
+#backbutton{
+  margin-top: 20px;
+  
 }
 
 /*.input {
