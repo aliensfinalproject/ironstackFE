@@ -34,124 +34,145 @@
 
 </div>
 
-<!-- <div class="tile is-ancestor">
-  <div class="tile is-4 is-vertical">
-    <div class="tile"> -->
-      <!-- Top tile -->
-    <!-- </div>
-    <div class="tile"> -->
-      <!-- Bottom tile -->
-    <!-- </div>
+<div class="columns">
+  <div class="column">
+    <h1 class = "title nav-center">Assignments</h1>
   </div>
-  <div class="tile"> -->
-    <!-- This tile will take up the whole vertical space -->
-  <!-- </div>
-</div> -->
+  <div class="column notification is-info">
+    <h1 class = "title nav-center">Questions</h1>
+    <table class = "table is-striped" style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Delete</th>
+      </tr>
+      <tr ng-repeat = "question in about.questions" >
+        <td>
+          <ul>
+          <li ui-sref= "root.user.class.postDetails({id: question.id,class_id:question.class_id})">{{question.title}}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+          <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(post.class_id,post.id)"> x </button></div></a></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="column notification is-warning">
+    <h1 class = "title nav-center">Videos</h1>
+    <table class = "table is-striped" style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Delete</th>
+      </tr>
+      <tr ng-repeat = "video in about.videos" >
+        <td>
+          <ul>
+          <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:qvideo.class_id})">{{video.title}}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+          <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(post.class_id,post.id)"> x </button></div></a></li>
+          </ul>
+        </td>
+    </tr>
+    </table>
+  </div>
+  <div class="column notification is-dark">
+    <h1 class = "title nav-center">Code Snippets</h1>
+    <table class = "table is-striped" style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Delete</th>
+      </tr>
+      <tr ng-repeat = "code in about.codes" >
+        <td>
+          <ul>
+          <li ui-sref= "root.user.class.postDetails({id: code.id,class_id:code.class_id})">{{code.title}}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+          <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(code.class_id,code.id)"> x </button></div></a></li>
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="column notification is-primary">
+    <h1 class = "title nav-center">Statuses</h1>
+    <table class = "table is-striped" style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Delete</th>
+      </tr>
+      <tr ng-repeat = "status in about.statuses" >
+        <td>
+          <ul>
+          <li ui-sref= "root.user.class.postDetails({id: status.id,class_id:status.class_id})">{{status.title}}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+          <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(post.class_id,post.id)"> x </button></div></a></li>
+          </ul>
+        </td>
+    </tr>
+    </table>
+  </div>
+</div>
 
+
+  <!-- <div class="tile is-ancestor">
+    <div class="tile is-vertical is-4">
+      <div class="tile">
+        <div class="tile is-parent">
+          <article class="tile is-child box">
+            <p class="title">Five</p>
+            <p class="subtitle">Subtitle</p>
+            <div class="content">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat gravida libero rhoncus ut. Morbi maximus, leo sit amet vehicula eleifend, nunc dui porta orci, quis semper odio felis ut quam.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div.
+
+
+
+<div class="box">
 
 <div class="tile is-ancestor">
-  <div class="tile is-vertical is-8">
+  <div class="tile is-vertical">
     <div class="tile">
       <div class="tile is-parent is-vertical">
         <article class="tile is-child notification is-info">
           <p class="title">Questions</p>
-          <p class="subtitle">  <table class = "table is-striped" style="width:100%">
-              <tr>
-                <th>Questions</th>
-                <th>Delete</th>
-              </tr>
-              <tr ng-repeat = "question in about.questions" >
-                <td>
-                  <ul>
-                  <li ui-sref= "root.user.class.postDetails({id: question.id,class_id:question.class_id})">{{question.title}}</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul>
-                  <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(post.class_id,post.id)"> Delete Post </button></div></a></li>
-                  </ul>
-                </td>
-              </tr>
-            </table>
+          <p class="subtitle">
           </p>
         </article>
         <article class="tile is-child notification is-warning">
           <p class="title">Videos</p>
-          <p class="subtitle">  <table class = "table is-striped" style="width:100%">
-              <tr>
-                <th>Videos</th>
-                <th>Delete</th>
-              </tr>
-              <tr ng-repeat = "video in about.videos" >
-                <td>
-                  <ul>
-                  <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:qvideo.class_id})">{{video.title}}</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul>
-                  <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(post.class_id,post.id)"> Delete Post </button></div></a></li>
-                  </ul>
-                </td>
-            </tr>
-            </table>
+          <p class="subtitle">
           </p>
         </article>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="tile is-ancestor">
-  <div class="tile is-vertical is-8">
-    <div class="tile">
-      <div class="tile is-parent is-vertical">
         <article class="tile is-child notification is-dark">
           <p class="title">Code Snippets</p>
-          <p class="subtitle">  <table class = "table is-striped" style="width:100%">
-              <tr>
-                <th>Code</th>
-                <th>Delete</th>
-              </tr>
-              <tr ng-repeat = "code in about.codes" >
-                <td>
-                  <ul>
-                  <li ui-sref= "root.user.class.postDetails({id: code.id,class_id:code.class_id})">{{code.title}}</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul>
-                  <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(code.class_id,code.id)"> Delete Post </button></div></a></li>
-                  </ul>
-                </td>
-              </tr>
-            </table>
+          <p class="subtitle">
           </p>
         </article>
         <article class="tile is-child notification is-primary">
           <p class="title">Status Updates</p>
-          <p class="subtitle">  <table class = "table is-striped" style="width:100%">
-              <tr>
-                <th>Statuses</th>
-                <th>Delete</th>
-              </tr>
-              <tr ng-repeat = "status in about.statuses" >
-                <td>
-                  <ul>
-                  <li ui-sref= "root.user.class.postDetails({id: status.id,class_id:status.class_id})">{{status.title}}</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul>
-                  <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(post.class_id,post.id)"> Delete Post </button></div></a></li>
-                  </ul>
-                </td>
-            </tr>
-            </table>
+          <p class="subtitle">
+
           </p>
         </article>
+
       </div>
     </div>
   </div>
-</div>
+</div> -->
 </div>
