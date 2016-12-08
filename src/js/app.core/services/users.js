@@ -5,6 +5,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getClasses = getClasses;
   this.getClass = getClass;
   this.addingClass = addingClass;
+  this.addAdmin = addAdmin;
   this.getUsers = getUsers;
   this.deleteUser = deleteUser;
   this.getPosts = getPosts;
@@ -40,11 +41,14 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   function addingClass(clazz){
     return $http.post(`${SERVER}/class/create`, clazz, {headers:getHeaders()});
   }
+  function addAdmin(user,user_id){
+    return $http.put(`${SERVER}/usermgmt/${user_id}`,user,{headers:getHeaders()});
+  }
   function getUsers(){
     return $http.get(`${SERVER}/usermgmt`,{headers:getHeaders()});
   }
-  function deleteUser(){
-    return $http.delete(`${SERVER}/users/delete/`+$stateParams._id,{headers:getHeaders()});
+  function deleteUser(user_id){
+    return $http.delete(`${SERVER}/users/delete/${user_id}`,{headers:getHeaders()});
   }
   function addclasstoUser(clazz){
     return $http.post(`${SERVER}/usermgmt/addclass/`,clazz,{headers:getHeaders()});
