@@ -1,4 +1,4 @@
-function UserListController(UserService,$state,$rootScope){
+function UserListController(UserService,$state,$rootScope,$stateParams){
 
 	let vm = this
 	vm.listusers = [];
@@ -12,12 +12,22 @@ function UserListController(UserService,$state,$rootScope){
 	}
 	vm.displayUsers();
 
-	vm.deleteUser = function(userid){
-		UserService.deleteUser().then(
+	vm.removeUser = function(user_id){
+		console.log('hello')
+		UserService.deleteUser(user_id).then(
 			resp =>{
-				$state.go('root.user.class.list')
+				vm.listusers = vm.listusers.filter(user => {
+					return user.id != user_id;
+				})
 			})
+	}
 
+	vm.makeAdmin = function(user, user_id){
+		console.log('hi, user id is: ', user_id)
+		UserService.addAdmin(user, user_id).then(
+			resp => {
+				console.log(resp);
+			})
 	}
 }
 
@@ -26,5 +36,5 @@ function UserListController(UserService,$state,$rootScope){
 
 
 
-UserListController.$inject = ['UserService', '$state', '$rootScope'];
+UserListController.$inject = ['UserService', '$state', '$rootScope','$stateParams'];
 export { UserListController };
