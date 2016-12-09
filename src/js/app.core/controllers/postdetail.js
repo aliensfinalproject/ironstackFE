@@ -31,7 +31,6 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 	vm.readComments = function(){
 		UserService.getComments($stateParams.id).then(
 			resp => {
-				console.log(resp.data)
 				vm.comments = resp.data
 				prettyPrint()
 			})
