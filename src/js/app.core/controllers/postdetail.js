@@ -34,8 +34,6 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 			resp => {
 				vm.comments = resp.data
 				vm.count = vm.comments.length
-				console.log(vm.count)
-
 				prettyPrint()
 			})
 	}

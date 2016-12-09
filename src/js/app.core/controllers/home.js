@@ -5,9 +5,7 @@ function HomeController(UserService,$state,$rootScope){
 	vm.displayPosts = function(){
 		UserService.userPost().then(
 			resp =>{
-				console.log(resp)
 				vm.userposts = resp.data
-				console.log('user posts: ', vm.userposts)
 			})
 	}
 	vm.displayPosts();
@@ -17,7 +15,6 @@ function HomeController(UserService,$state,$rootScope){
 		UserService.deletePost(class_id,post_id).then(
 
 			resp =>{
-				console.log(resp)
 				vm.displayPosts();
 
 			})

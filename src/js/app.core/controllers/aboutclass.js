@@ -28,11 +28,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 			resp => {
 				
 				vm.posts = resp.data
-				
 				vm.classID = vm.posts[0].class_id
-				console.log('classID',vm.classID)
-
-
 			})
 	}
 	vm.readPost();
@@ -49,7 +45,6 @@ vm.listclasses = function(){
 	 	UserService.getClasses().then(
 	 		resp =>{
 	 			vm.classOptions = resp.data;
-	 			console.log(vm.classOptions)
 	 			for(let i =0; i<vm.classOptions.length;i++){
 	 				if(vm.classID == vm.classOptions[i].id)
 	 				vm.className = vm.classOptions[i].className
