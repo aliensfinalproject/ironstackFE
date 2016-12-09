@@ -5,7 +5,7 @@
       margin-top: 20%;
     }
 
-    
+
 .styling_title{
   display: inline-block;
 
@@ -121,3 +121,7 @@ a{
   text-align: center;
 }*/
 
+.column {
+  max-height: 300px;
+  overflow: auto;
+}
