@@ -1,4 +1,4 @@
-function AboutController(UserService,$state,$rootScope,$stateParams){
+function AboutAssignmentsController(UserService,$state,$rootScope,$stateParams){
 	let vm = this
 	vm.post = {}
 	vm.posts = [];
@@ -15,7 +15,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams){
 
 	}
 	vm.readPost = function(){
-		UserService.getPosts(assignment_id).then(
+		UserService.getPosts($stateParams.id).then(
 			resp => {
 				console.log(resp)
 				vm.posts = resp.data
@@ -33,5 +33,5 @@ function AboutController(UserService,$state,$rootScope,$stateParams){
 }
 
 
-AboutController.$inject = ['UserService', '$state', '$rootScope','$stateParams'];
-export { AboutController };
+AboutAssignmentsController.$inject = ['UserService', '$state', '$rootScope','$stateParams'];
+export { AboutAssignmentsController };

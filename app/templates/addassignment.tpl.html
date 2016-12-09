@@ -20,5 +20,5 @@
 <button class= "button is-outlined is-info" type= "submit"> Create Assignment</button>
 
 </form>
-<a ui-sref = "root.user.class.about"><button class= "button is-outlined is-info"> Back to Class Home </button></a>
-<a ui-sref = "root.user.class.about.enabledassignments"><button class= "button is-outlined is-info"> Assignment List </button></a>
+<a ui-sref = "root.user.class.about({id: addassignment.id})"><button class= "button is-outlined is-info"> Back to Class Home </button></a>
+<a ui-sref = "root.user.class.enabledassignments({id: addassignment.id})"><button class= "button is-outlined is-info"> Assignment List </button></a>

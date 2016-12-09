@@ -1,9 +1,11 @@
-function EnabledAssignmentsController(UserService,$state,$rootScope,$scope){
+function EnabledAssignmentsController(UserService,$state,$rootScope,$scope,$stateParams){
     let vm = this;
    vm.list = [];
 
+
+
    vm.listassignments = function(){
-    UserService.getAssignments().then(
+    UserService.getAssignments($stateParams.id).then(
       resp =>{
         vm.list = resp.data;
         console.log (resp.data)
@@ -27,6 +29,6 @@ function EnabledAssignmentsController(UserService,$state,$rootScope,$scope){
    }
 
 }
-EnabledAssignmentsController.$inject = ['UserService', '$state', '$rootScope','$scope'];
+EnabledAssignmentsController.$inject = ['UserService', '$state', '$rootScope','$scope', '$stateParams'];
 
 export { EnabledAssignmentsController };

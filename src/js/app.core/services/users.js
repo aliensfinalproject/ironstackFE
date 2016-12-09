@@ -56,8 +56,8 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   function addPost(post, class_id){
     return $http.post(`${SERVER}/class/${class_id}/post`,post,{headers:getHeaders()});
   }
-  function getPosts(class_id){
-    return $http.get(`${SERVER}/class/${class_id}/posts`,{headers:getHeaders()});
+  function getPosts(assignment_id){
+    return $http.get(`${SERVER}/class/${assignment_id}/posts`,{headers:getHeaders()});
   }
   function getPost(class_id,post_id){
     return $http.get(`${SERVER}/class/${class_id}/post/${post_id}`,{headers:getHeaders()});
@@ -81,8 +81,8 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
  function addAssignment(assignment){
    return $http.post(`${SERVER}/assignment/`, assignment,  {headers:getHeaders()});
 }
-function getAssignments(){
- return $http.get(`${SERVER}/assignments`, {headers:getHeaders()});
+function getAssignments(class_id){
+ return $http.get(`${SERVER}/${class_id}/assignments/`, {headers:getHeaders()});
 }
 function deleteAssignment (id) {
  return $http.delete(`${SERVER}/assignment/${id}`, {headers:getHeaders()});
