@@ -22,15 +22,26 @@
         <li>{{userpost.category}}</li>
         </ul>
       </td>
+
       <td>
         <ul>
-        <li<div><button class = "button is-danger level-right" type="button"  ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div></a></li>
+        <li><div><button class = "button is-danger level-right" type="button"  ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div></li>
         </ul>
       </td>
-    </tr>
- </table>
 
-  <a ui-sref = "root.user.class.list"><button class = "button is-dark" type="button" id ="backbutton"> Back </button></a>
+
+      <!--<td>
+    <button class = "button is-dark" type="button" id ="backbutton" ui-sref="root.user.class.about({id:userpost.class_id})"> Back </button>
+    </td>-->
+
+    </tr>
+    
+
+ </table>
+ <button class = "button is-dark" type="button" id ="backbutton" ng-click="backToClass(home.userposts.class_id)"> Back </button>
+
+
+  
 
 
 </div>

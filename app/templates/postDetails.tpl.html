@@ -9,7 +9,6 @@
 
 <div ng-if="post.postDetails.category == 'status'">
 	<div id="styleStatusContent" class="notification is-primary">
-		<!--<div> Title:{{post.postDetails.title}}</div>-->
 		<div>{{post.postDetails.content}}</div>
 	</div>
 </div>
@@ -42,5 +41,5 @@
 	
 </div>
 
-<a ui-sref = "root.user.class.list"><button class="button is-dark" type="button" id="backbutton"> Back </button></a>
+<a ui-sref = "root.user.class.about({id:post.postDetails.class_id})"><button class="button is-dark" type="button" id="backbutton"> Back </button></a>
 </div>
