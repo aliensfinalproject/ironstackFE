@@ -8,7 +8,7 @@ function LayoutController ($rootScope, UserService) {
   $rootScope.$on('loginChange', (event, data) => {
     vm.loggedIn = UserService.isLoggedIn();
     vm.admin = UserService.isAdmin();
-    console.log(vm.admin)
+  
   });
 
   function logout () {
