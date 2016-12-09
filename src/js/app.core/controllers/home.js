@@ -1,12 +1,13 @@
 function HomeController(UserService,$state,$rootScope){
 	let vm =this
-	vm.userposts = []
+	vm.userposts = [];
 
 	vm.displayPosts = function(){
 		UserService.userPost().then(
 			resp =>{
 				console.log(resp)
 				vm.userposts = resp.data
+				console.log('user posts: ', vm.userposts)
 			})
 	}
 	vm.displayPosts();

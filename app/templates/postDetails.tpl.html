@@ -33,6 +33,8 @@
 	<button class="button is-dark" id="styleAddCommentButton" type="submit"> Add Comment </button>
 </form>
 
+<div> {{post.count}} comments </div>
+
 <div  ng-repeat = "comment in post.comments">
 	<div id = "styling_display_comment" class ="box" >
 		<div id="styleComment">{{comment.content}}</div>

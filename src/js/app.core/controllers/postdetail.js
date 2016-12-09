@@ -2,6 +2,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 	let vm = this;
 	vm.postDetails ={}
 	vm.comments =[]
+	vm.count="";
 	
 	vm.getPostDetails = function(){
 		UserService.getPost($stateParams.class_id,$stateParams.id).then(
@@ -32,6 +33,9 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 		UserService.getComments($stateParams.id).then(
 			resp => {
 				vm.comments = resp.data
+				vm.count = vm.comments.length
+				console.log(vm.count)
+
 				prettyPrint()
 			})
 	}

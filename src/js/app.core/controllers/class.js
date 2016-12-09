@@ -7,6 +7,7 @@ function ClassController(UserService,$state,$rootScope){
 	 vm.listclasses = function(){
 	 	UserService.getClasses().then(
 	 		resp =>{
+	 			
 	 			vm.list = resp.data;
 
 	 		})
