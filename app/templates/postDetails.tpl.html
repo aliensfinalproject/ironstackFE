@@ -33,7 +33,9 @@
 	<button class="button is-dark" id="styleAddCommentButton" type="submit"> Add Comment </button>
 </form>
 
-<div> {{post.count}} comments </div>
+<div ng-click="post.readComments()" ng-show="!post.showComments">Show {{post.count}} Comments</div>
+
+<div ng-click="post.readComments()" ng-show="post.showComments">{{post.count}}<ng-pluralize count="count" when="{'1':'comment', 'other':'comments'}"></ng-pluralize> comments </div>
 
 <div  ng-repeat = "comment in post.comments">
 	<div id = "styling_display_comment" class ="box" >
