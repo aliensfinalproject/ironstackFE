@@ -19,6 +19,14 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 			resp =>{
 
 				vm.post = resp.data
+				$http({
+					method: 'POST',
+					url:'https://hooks.slack.com/services/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',
+					data: {"text":"New Post: " + vm.post.title + " <http://localhost:8081/#/class/postDetails/"+ vm.post.class_id + "/" + vm.post.id + ">"},
+					headers: {
+						'content-type': undefined
+					}
+				})
 				vm.readPost();
 				vm.post={}
 			})
