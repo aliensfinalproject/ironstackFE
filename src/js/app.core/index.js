@@ -17,6 +17,7 @@ import { AboutController } from "./controllers/aboutclass"
 import { HomeController } from "./controllers/home"
 import { PostDetailsController }from "./controllers/postdetail"
 import { SelectClassController } from "./controllers/selectclass"
+import { NotesController }from "./controllers/notes"
 
 angular
  .module('app.core', ['ui.router', 'ngCookies'])
@@ -32,4 +33,5 @@ angular
  .controller('HomeController',HomeController)
  .controller('PostDetailsController',PostDetailsController)
  .controller('SelectClassController',SelectClassController)
+ .controller('NotesController', NotesController)
  .service('UserService', UserService);
