@@ -2,6 +2,8 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 	let vm = this;
 	vm.postDetails ={}
 	vm.comments =[]
+	vm.count="";
+	vm.showComments = false;
 	
 	vm.getPostDetails = function(){
 		UserService.getPost($stateParams.class_id,$stateParams.id).then(
@@ -13,6 +15,11 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 				var base_url = "https://www.youtube.com/embed/"
 				var video_url = base_url.concat(reqdCode);
 				vm.display_url= $sce.trustAsResourceUrl(video_url)
+
+				UserService.getComments($stateParams.id).then(
+				resp => {
+					vm.count = resp.data.length
+				})
 				
 				
 			})
@@ -32,6 +39,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 						'content-type': undefined
 					}
 				})
+
 				vm.readComments();
 				vm.comment ="";
 			})
@@ -40,16 +48,19 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 	vm.readComments = function(){
 		UserService.getComments($stateParams.id).then(
 			resp => {
-				console.log(resp.data)
 				vm.comments = resp.data
+				vm.count = vm.comments.length
+				vm.showComments = true;
 				prettyPrint()
 			})
 	}
-	vm.readComments();
+	//vm.readComments();
 
 	vm.removeComment = function(post_id,id){
+		console.log('hi')
 		UserService.deleteComment(post_id,id).then(
 			resp =>{
+				console.log(resp)
 				vm.readComments();
 			})
 	}
