@@ -1,8 +1,24 @@
 <div class="box">
 
   <div class="box">
+  <div ui-view="enabledassignments">
+  </div>
+    <div id="left-assignments"><a ui-sref="root.user.class.addassignment({ id: about.id })"><button class= "button is-outlined is-info"> Create Assignment </button></a></div>
+  </div>
+
+  <div class="box">
     <h1></h1>
     <h1  class= "style_Htag" >Add Post</h1>
+    <!-- select assignment -->
+    <div id= "select-assignment">
+    <select class="styling_selectcategory" ng-model="about.post.assignment_id" >
+      <option value="" disabled selected>Please Select Assignment...</option>
+      <option ng-repeat="assignment in about.assignments" value="{{ assignment.id }}">
+        {{ assignment.title }}
+      </option>
+    </select>
+  </div>
+  <!-- select category -->
      <select class="styling_selectcategory" value = "category" ng-model ="about.post.category" >
         <option value="" disabled selected>Please Select Category...</option>
         <option value="question">Questions</option>
@@ -10,11 +26,7 @@
         <option value="code">Code snippets</option>
         <option value="status">Status Update</option>
       </select>
-    <select ng-model="about.post.assignment_id" >
-      <option ng-repeat="assignment in about.assignments" value="{{ assignment.id }}">
-        {{ assignment.title }}
-      </option>
-    </select>
+  <!-- form options     -->
     <div class ="form_div">
       <form class="styling_aboutform" ng-submit = "about.createPost()">
         <label class="label" ng-show = "about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'"> Title </label>
@@ -34,12 +46,6 @@
         <button class = "button is-dark" type="submit" id ="styleAddPostButton"> Post </button>
       </form>
     </div>
-  </div>
-
-  <div class="box">
-  <div ui-view="enabledassignments">
-  </div>
-    <div id="left-assignments"><a ui-sref="root.user.class.addassignment({ id: about.id })"><button class= "button is-outlined is-info"> Create Assignment </button></a></div>
   </div>
 
   <div class="box">

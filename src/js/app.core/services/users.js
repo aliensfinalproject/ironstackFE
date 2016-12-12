@@ -23,6 +23,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getHeaders = getHeaders;
   this.addAssignment = addAssignment;
   this.getAssignments = getAssignments;
+  this.updateAssignment = updateAssignment;
   this.deleteAssignment = deleteAssignment;
 
   function create (user) {
@@ -86,6 +87,9 @@ function getAssignments(class_id){
 }
 function deleteAssignment (id) {
  return $http.delete(`${SERVER}/assignment/${id}`, {headers:getHeaders()});
+}
+function updateAssignment(id){
+ return $http.get(`${SERVER}/${assignment}/${id}/`, {headers:getHeaders()});
 }
 
   function isLoggedIn () {
