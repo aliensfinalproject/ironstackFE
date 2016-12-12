@@ -1,6 +1,6 @@
 <h3 class="title">Add an Assignment</h3>
 
-<form name="assignment-form" ng-submit="addassignment.addassignment(addassignment.assignment)">
+<form name="assignment-form" ng-submit="addassignment.addassignment(addassignment.assignment).reset()">
   <p class="control">
     <input  class= "input is-medium" type="text" placeholder="Assignment Name"
            ng-model="addassignment.assignment.title" required />
@@ -21,4 +21,3 @@
 
 </form>
 <a ui-sref = "root.user.class.about({id: addassignment.id})"><button class= "button is-outlined is-info"> Back to Class Home </button></a>
-<a ui-sref = "root.user.class.enabledassignments({id: addassignment.id})"><button class= "button is-outlined is-info"> Assignment List </button></a>

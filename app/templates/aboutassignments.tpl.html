@@ -12,13 +12,7 @@
 <div class ="form_div">
 	<form class="styling_aboutform" ng-submit = "aboutassignments.createPost()">
 
-    <select class="styling_selectcategory" value = "assignment_id" ng-model ="aboutassignments.post.assignment_id" >
-   	  <option value="" disabled selected>Please Select Category...</option>
-   	  <option value="question">Questions</option>
-   	  <option value="video">You-Tube Video tutorials</option>
-   	  <option value="code">Code snippets</option>
-   	  <option value="status">Status Update</option>
-   	</select>
+
 		<label class="label" ng-show = "aboutassignments.post.category == 'question'||aboutassignments.post.category == 'video'||aboutassignments.post.category == 'code'||aboutassignments.post.category == 'status'"> Title </label>
 	    <input class="input" type="text" ng-model ="aboutassignments.post.title" ng-show = "aboutassignments.post.category == 'question'||aboutassignments.post.category == 'video'||aboutassignments.post.category == 'code'||aboutassignments.post.category == 'status'">
 

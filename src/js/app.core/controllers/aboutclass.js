@@ -3,7 +3,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 				vm.post = {}
 				vm.posts = [];
 				vm.id = $stateParams.id;
-				vm.enable = new EnabledAssignmentsController();
+				vm.assignments = [];
 
 				vm.user={};
 				vm.classOptions = []
@@ -15,6 +15,16 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 				vm.videos = [];
 				vm.codes = [];
 				vm.statuses = [];
+
+        function getAssignments () {
+					console.log('hi there')
+					UserService.getAssignments($stateParams.id).then(
+						resp =>{
+							vm.assignments = resp.data;
+							console.log (resp.data)
+
+						}).catch(error=>{ console.log(error)})
+				}
 
 				vm.createPost = function(){
 					vm.post.class_id = Number($stateParams.id)
@@ -51,7 +61,6 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 							})
 						})
 				}
-				vm.readPost();
 
 				vm.removePost = function(class_id,id){
 					UserService.deletePost(class_id,id).then(
@@ -66,15 +75,22 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 				 		resp =>{
 				 			vm.classOptions = resp.data;
 				 			for(let i =0; i<vm.classOptions.length;i++){
-				 				if(vm.classID == vm.classOptions[i].id)
-				 				vm.className = vm.classOptions[i].className
-
+				 				if(vm.classID == vm.classOptions[i].id) {
+				 					vm.className = vm.classOptions[i].className
+				 				}
 				 			}
+						})
+					}
 
-				 		})
-			}
-			vm.listclasses();
-			}
+					function init () {
+						vm.readPost();
+						vm.listclasses();
+						getAssignments();
+					}
+
+					init();
+
+}
 
 			AboutController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$http'];
 			export { AboutController };
