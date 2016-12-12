@@ -2,6 +2,8 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 	let vm = this
 	vm.post = {}
 	vm.posts = [];
+	vm.id = $stateParams.id;
+	vm.assignments = [];
 
 	vm.user={};
 	vm.classOptions = []
@@ -13,6 +15,16 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 	vm.videos = [];
 	vm.codes = [];
 	vm.statuses = [];
+
+	function getAssignments () {
+		console.log('hi there')
+		UserService.getAssignments($stateParams.id).then(
+			resp =>{
+				vm.assignments = resp.data;
+				console.log (resp.data)
+
+			}).catch(error=>{ console.log(error)})
+	}
 
 	vm.createPost = function(){
 		UserService.addPost(vm.post, $stateParams.id).then(
@@ -39,7 +51,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 	vm.readPost = function(){
 		UserService.getPosts($stateParams.id).then(
 			resp => {
-				
+
 				vm.posts = resp.data
 				vm.classID = vm.posts[0].class_id
 
@@ -63,7 +75,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 		UserService.deletePost(class_id,id).then(
 			resp =>{
 				vm.readPost();
-			})	
+			})
 	}
 
 
@@ -74,12 +86,20 @@ vm.listclasses = function(){
 	 			for(let i =0; i<vm.classOptions.length;i++){
 	 				if(vm.classID == vm.classOptions[i].id)
 	 				vm.className = vm.classOptions[i].className
-	 			
+
 	 			}
 
 	 		})
 }
-vm.listclasses();
+
+function init () {
+	vm.readPost();
+	vm.listclasses();
+	getAssignments();
+}
+
+init();
+
 }
 
 AboutController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$http'];

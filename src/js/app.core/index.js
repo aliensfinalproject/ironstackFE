@@ -17,9 +17,11 @@ import { AboutController } from "./controllers/aboutclass"
 import { HomeController } from "./controllers/home"
 import { PostDetailsController }from "./controllers/postdetail"
 import { SelectClassController } from "./controllers/selectclass"
+import { AddAssignmentController } from "./controllers/addassignment"
+import { EnabledAssignmentsController } from "./controllers/enableassignments"
+import { AboutAssignmentsController } from "./controllers/aboutassignments"
 import { ProfileController } from "./controllers/profile"
 import { NotesController }from "./controllers/notes"
-
 
 angular
  .module('app.core', ['ui.router', 'ngCookies'])
@@ -35,6 +37,9 @@ angular
  .controller('HomeController',HomeController)
  .controller('PostDetailsController',PostDetailsController)
  .controller('SelectClassController',SelectClassController)
- .controller('ProfileController',ProfileController)
- .controller('NotesController', NotesController)
- .service('UserService', UserService);
+.controller('AddAssignmentController', AddAssignmentController)
+.controller('EnabledAssignmentsController', EnabledAssignmentsController)
+.controller('AboutAssignmentsController', AboutAssignmentsController)
+.controller('ProfileController',ProfileController)
+.controller('NotesController', NotesController)
+.service('UserService', UserService);

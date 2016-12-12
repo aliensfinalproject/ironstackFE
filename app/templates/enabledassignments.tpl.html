@@ -1,0 +1,61 @@
+<!--
+<ul id= "list">
+  <li ng-repeat="item in enabled.list">
+    <div id= "individual-enabled" class= "box">
+      <span id="assign-style">Assignment:
+      </span>
+        <span>{{item.title}}</span>
+        <div>
+        <span id= "week-style">Week:
+        </span>
+      <span>{{item.week}}</span>
+      <div>
+      <span id= "week-style">Class:
+      </span>
+    <span>{{item.class_id}}</span>
+    <div>
+      <span id= "week-style">Description:
+      </span>
+    <span>{{item.description}}</span>
+    <div>
+  <button type="button" class= "button is-outlined is-info" ng-click="enabled.deleteassignment(item.id)"> Delete </button></a> -->
+  <!-- <a ui-sref= "root.user.class.assignmentabout({id: enabled.class_id, assignment_id:enabled.id})" class="btn btn-primary">List</a> -->
+  <!-- </div>
+  </li>
+</ul> -->
+
+
+<table class = "table is-striped" style="width:100%">
+  <h1 class="title">Assignments</h1>
+  <tr>
+    <th>Week</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Delete</th>
+  </tr>
+  <tr ng-repeat = "item in enabled.list" >
+    <td>
+      <ul>
+      <li>{{item.week}}</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+      <li>{{item.title}}</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+      <li>{{item.description}}</li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>  <button type="button" class= "button is-outlined is-info"  ng-click="enabled.deleteassignment(item.id)"> Delete </button></a>
+        </li>
+        <li>  <button type="button" class= "button is-outlined is-info"  ng-click="enabled.updateassignment(item.id)"> Update </button></a>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>

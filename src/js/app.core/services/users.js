@@ -23,6 +23,10 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.setUser = setUser;
   this.logout = logout;
   this.getHeaders = getHeaders;
+  this.addAssignment = addAssignment;
+  this.getAssignments = getAssignments;
+  this.updateAssignment = updateAssignment;
+  this.deleteAssignment = deleteAssignment;
 
   function create (user) {
     return $http.post(`${SERVER}/register`, user);
@@ -83,6 +87,19 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
     return $http.post(`${SERVER}/slackuser/`,user,{headers:getHeaders()});
 
   }
+
+ function addAssignment(assignment){
+   return $http.post(`${SERVER}/assignment/`, assignment,  {headers:getHeaders()});
+}
+function getAssignments(class_id){
+ return $http.get(`${SERVER}/${class_id}/assignments/`, {headers:getHeaders()});
+}
+function deleteAssignment (id) {
+ return $http.delete(`${SERVER}/assignment/${id}`, {headers:getHeaders()});
+}
+function updateAssignment(id){
+ return $http.get(`${SERVER}/${assignment}/${id}/`, {headers:getHeaders()});
+}
 
   function isLoggedIn () {
     return $cookies.get('username') ? true : false;

@@ -38,8 +38,15 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
    })
    .state('root.user.class.about', {
     url: '/about/:id',
-    templateUrl: 'templates/about.tpl.html',
-    controller: 'AboutController as about',
+    views: {
+      '' : {
+        templateUrl: 'templates/about.tpl.html',
+        controller: 'AboutController as about'
+      }, 'enabledassignments@root.user.class.about': {
+        templateUrl: 'templates/enabledassignments.tpl.html',
+        controller: 'EnabledAssignmentsController as enabled'
+      }
+    },
     params: {id:null}
    })
     .state('root.user.class.postDetails', {
@@ -48,7 +55,6 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     controller: 'PostDetailsController as post',
     params: {id:null,class_id:null}
    })
-
     .state('root.user.class.add', {
     url: '/add',
     templateUrl: 'templates/addclass.tpl.html',
@@ -77,6 +83,23 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
  })
 
 
+   .state('root.user.class.assignmentabout', {
+    url: '/about/:id/assignment/:assignment_id',
+    templateUrl: 'templates/aboutassignments.tpl.html',
+    controller: 'AboutAssignmentsController as aboutassignments',
+    // params: {id:null}
+   })
+   .state('root.user.class.about.enabledassignments', {
+   url: '/:id/enabledassignments',
+   templateUrl: 'templates/enabledassignments.tpl.html',
+   controller: 'EnabledAssignmentsController as enabled',
+
+  })
+  .state('root.user.class.addassignment', {
+   url:'/:id/addassignment/',
+   templateUrl: 'templates/addassignment.tpl.html',
+   controller: 'AddAssignmentController as addassignment'
+  })
 
  $urlRouterProvider.otherwise('/login');
 };

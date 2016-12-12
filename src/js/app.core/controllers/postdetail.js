@@ -4,7 +4,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 	vm.comments =[]
 	vm.count="";
 	vm.showComments = false;
-	
+
 	vm.getPostDetails = function(){
 		UserService.getPost($stateParams.class_id,$stateParams.id).then(
 			resp => {
@@ -20,17 +20,17 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 				resp => {
 					vm.count = resp.data.length
 				})
-				
-				
+
 			})
 
 	}
 	vm.getPostDetails();
 
-	vm.createComment = function(comment){	
+	vm.createComment = function(comment){
 		UserService.addComment(comment, $stateParams.id).then(
 
-			resp =>{ 
+
+			resp =>{
 				$http({
 					method: 'POST',
 					url:'https://hooks.slack.com/services/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',
@@ -39,6 +39,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 						'content-type': undefined
 					}
 				})
+
 
 				vm.readComments();
 				vm.comment ="";
@@ -65,5 +66,6 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 			})
 	}
 }
-PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce','$http'];
+
+PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce'];
 export{ PostDetailsController };
