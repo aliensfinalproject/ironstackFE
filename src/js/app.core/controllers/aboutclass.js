@@ -19,6 +19,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 			resp =>{
 
 				vm.post = resp.data
+				vm.classID = vm.posts[0].class_id
 				$http({
 					method: 'POST',
 					url:'https://hooks.slack.com/services/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',
