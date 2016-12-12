@@ -1,36 +1,40 @@
 <div class="box">
 
-  <section class = "hero is-dark section box">
-    <h1 class = "title is-2 nav-center">My Posts</h1>
-  </section>
+  <div class="box">
+    <section class = "hero is-dark box">
+      <h1 class = "title is-2 nav-center">My Posts</h1>
+    </section>
+    <table class = "table is-striped" style="width:100%">
+      <tr>
+        <th>Title</th>
+        <th>Category</th>
+        <th>Delete</th>
+      </tr>
+      <tr ng-repeat = "userpost in home.userposts">
+        <td>
+          <ul>
+          <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"> {{userpost.title}}</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+          <li>{{userpost.category}}</li>
+          </ul>
+        </td>
 
+        <td>
+          <ul>
+          <li><div><button class = "button is-danger level-right" type="button"  ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div></li>
+          </ul>
+        </td>
 
-  <table class = "table is-striped" style="width:100%">
-    <tr>
-      <th>Title</th>
-      <th>Category</th>
-      <th>Delete</th>
-    </tr>
-    <tr ng-repeat = "userpost in home.userposts">
-      <td>
-        <ul>
-        <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"> {{userpost.title}}</li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-        <li>{{userpost.category}}</li>
-        </ul>
-      </td>
-      <td>
-        <ul>
-        <li<div><button class = "button is-danger level-right" type="button"  ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div></a></li>
-        </ul>
-      </td>
-    </tr>
- </table>
+        <!-- <td>
+      <button class = "button is-dark" type="button" id ="backbutton" ui-sref="root.user.class.about({id:userpost.class_id})"> Back </button>
+      </td> -->
+      </tr>
+   </table>
+  </div>
 
-  <a ui-sref = "root.user.class.list"><button class = "button is-dark" type="button" id ="backbutton"> Back </button></a>
-
+ <button class = "button is-dark" type="button" id ="backbutton" ng-click="home.backToClass(home.userposts[0].class_id)"> Back </button>
 
 </div>

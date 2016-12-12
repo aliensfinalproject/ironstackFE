@@ -1,7 +1,9 @@
-function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
+function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$http){
 	let vm = this;
 	vm.postDetails ={}
 	vm.comments =[]
+	vm.count="";
+	vm.showComments = false;
 
 	vm.getPostDetails = function(){
 		UserService.getPost($stateParams.class_id,$stateParams.id).then(
@@ -14,6 +16,11 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 				var video_url = base_url.concat(reqdCode);
 				vm.display_url= $sce.trustAsResourceUrl(video_url)
 
+				UserService.getComments($stateParams.id).then(
+				resp => {
+					vm.count = resp.data.length
+				})
+
 			})
 
 	}
@@ -22,7 +29,18 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 	vm.createComment = function(comment){
 		UserService.addComment(comment, $stateParams.id).then(
 
+
 			resp =>{
+				$http({
+					method: 'POST',
+					url:'https://hooks.slack.com/services/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',
+					data: {"text":"New Comment on "+vm.postDetails.title+": " + vm.comment.content + " <http://localhost:8081/#/class/postDetails/"+ vm.postDetails.class_id + "/" + vm.postDetails.id + ">"},
+					headers: {
+						'content-type': undefined
+					}
+				})
+
+
 				vm.readComments();
 				vm.comment ="";
 			})
@@ -31,19 +49,23 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 	vm.readComments = function(){
 		UserService.getComments($stateParams.id).then(
 			resp => {
-				console.log(resp.data)
 				vm.comments = resp.data
+				vm.count = vm.comments.length
+				vm.showComments = true;
 				prettyPrint()
 			})
 	}
-	vm.readComments();
+	//vm.readComments();
 
 	vm.removeComment = function(post_id,id){
+		console.log('hi')
 		UserService.deleteComment(post_id,id).then(
 			resp =>{
+				console.log(resp)
 				vm.readComments();
 			})
 	}
 }
+
 PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce'];
 export{ PostDetailsController };

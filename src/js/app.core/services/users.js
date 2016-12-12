@@ -5,6 +5,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getClasses = getClasses;
   this.getClass = getClass;
   this.addingClass = addingClass;
+  this.addAdmin = addAdmin;
   this.getUsers = getUsers;
   this.deleteUser = deleteUser;
   this.getPosts = getPosts;
@@ -16,6 +17,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.userPost= userPost;
   this.addComment = addComment;
   this.getComments = getComments;
+  this.userProfile = userProfile;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
   this.setUser = setUser;
@@ -44,11 +46,14 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   function addingClass(clazz){
     return $http.post(`${SERVER}/class/create`, clazz, {headers:getHeaders()});
   }
+  function addAdmin(user,user_id){
+    return $http.put(`${SERVER}/usermgmt/${user_id}`,user,{headers:getHeaders()});
+  }
   function getUsers(){
     return $http.get(`${SERVER}/usermgmt`,{headers:getHeaders()});
   }
-  function deleteUser(){
-    return $http.delete(`${SERVER}/users/delete/`+$stateParams._id,{headers:getHeaders()});
+  function deleteUser(user_id){
+    return $http.delete(`${SERVER}/users/delete/${user_id}`,{headers:getHeaders()});
   }
   function addclasstoUser(clazz){
     return $http.post(`${SERVER}/usermgmt/addclass/`,clazz,{headers:getHeaders()});
@@ -78,6 +83,10 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
  function deleteComment(post_id,id){
   return $http.delete(`${SERVER}/post/${post_id}/comments/${id}`,{headers:getHeaders()});
  }
+ function userProfile(user){
+    return $http.post(`${SERVER}/slackuser/`,user,{headers:getHeaders()});
+
+  }
 
  function addAssignment(assignment){
    return $http.post(`${SERVER}/assignment/`, assignment,  {headers:getHeaders()});

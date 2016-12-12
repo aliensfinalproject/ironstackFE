@@ -69,7 +69,19 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     url:'/home',
     templateUrl: 'templates/home.tpl.html',
     controller: 'HomeController as home'
+
    })
+    .state('root.user.profile', {
+    url:'/profile',
+    templateUrl: 'templates/profile.tpl.html',
+    controller: 'ProfileController as profile'
+   })
+   .state('root.user.myNotes', {
+    url: '/myNotes',
+    templateUrl: 'templates/pensive.tpl.html',
+    controller: 'NotesController as notes'
+ })
+
 
    .state('root.user.class.assignmentabout', {
     url: '/about/:id/assignment/:assignment_id',
