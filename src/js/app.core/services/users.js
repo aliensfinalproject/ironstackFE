@@ -17,6 +17,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.userPost= userPost;
   this.addComment = addComment;
   this.getComments = getComments;
+  this.userProfile = userProfile;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
   this.setUser = setUser;
@@ -78,6 +79,10 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
  function deleteComment(post_id,id){
   return $http.delete(`${SERVER}/post/${post_id}/comments/${id}`,{headers:getHeaders()});
  }
+ function userProfile(user){
+    return $http.post(`${SERVER}/slackuser/`,user,{headers:getHeaders()});
+
+  }
 
   function isLoggedIn () {
     return $cookies.get('username') ? true : false;

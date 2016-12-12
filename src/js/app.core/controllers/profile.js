@@ -7,6 +7,7 @@ function ProfileController (UserService, $state, $rootScope) {
       resp => {
         console.log(resp)
         vm.userprofile = resp.data
+        console.log(userprofile)
       })
   }
   
