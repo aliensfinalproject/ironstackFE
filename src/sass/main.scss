@@ -37,7 +37,7 @@
 .stylePostTable{
   margin: 10px;
 }
-.styleCaptions{
+.styleTags{
   display: inline-block;
   border: 1px solid lightgray;
   width: 70px;
@@ -59,8 +59,65 @@
 a{
   color: #4a4a4a;
 }
-
-.input {
-  text-align: center;
+#styleQuestion{
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+#questionTitle{
+  font-size: 20px;
+  font-family: Nunito;
+}
+#question{
+  font-size: 18px;
+  font-family: Nunito;
+}
+#styleAddCommentButton{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#styleComment{
+  display: inline-block;
+
+}
+#stlyeDeleteCommentButton{
+  float: right;
+
+}
+#styleStatusContent{
+  font-size: 25px;
+  font-family: 'Indie Flower', cursive;
+  margin-top: 10px;
+
+}
+#styling_display_comment{
+  font-size: 20px;
+  font-family: 'Josefin+Sans';
+  color:#363636;
+  margin-bottom: 10px;
+}
+#backbutton{
+  margin-top: 20px;
+
+}
+#videoTitle{
+  font-size: 20px;
+  font-family: Nunito;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+#videoBox{
+  margin-top: 5px;
+  text-align: center;
+  padding:7px;
+}
+#codeTitle{
+  font-size: 20px;
+  font-family: Nunito;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+/*.input {
+  text-align: center;
+}*/
 

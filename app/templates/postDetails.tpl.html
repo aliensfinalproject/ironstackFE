@@ -1,45 +1,46 @@
+<div class = "box">
 <div ng-if="post.postDetails.category == 'question'">
-  <article class="message is-info">
-  <div class="message-header">Question</div>
-  <div class="message-body">
-    <div> Title:{{post.postDetails.title}}</div>
-	<div> Comment:{{post.postDetails.content}}</div>
+  <article  id ="styleQuestion" class="message is-info">
+  <div id="questionTitle" class="message-header">Title:{{post.postDetails.title}} </div>
+  <div id="question" class="message-body">Question:{{post.postDetails.content}}
   </div>
 </article>
 </div>
 
 <div ng-if="post.postDetails.category == 'status'">
-	<div class="notification is-primary">
-		<div> Title:{{post.postDetails.title}}</div>
-		<div> Content:{{post.postDetails.content}}</div>
+	<div id="styleStatusContent" class="notification is-primary">
+		<!--<div> Title:{{post.postDetails.title}}</div>-->
+		<div>{{post.postDetails.content}}</div>
 	</div>
 </div>
 
-<div ng-if="post.postDetails.category == 'video'">
-		<div> Title:{{post.postDetails.title}}</div>
-		<iframe width="560" height="315" ng-src="{{post.display_url}}"frameborder="0" allowfullscreen></iframe>
-		
+<div id="videoTitle" ng-if="post.postDetails.category == 'video'">
+	<article class="message is-warning">
+	  	<div class="message-header">Title:{{post.postDetails.title}}</div>
+		<div id="videoBox" ><iframe width="560" height="315" ng-src="{{post.display_url}}"frameborder="0" allowfullscreen></iframe></div>
+	</article>
 </div>
 
 <div ng-if="post.postDetails.category == 'code'">
-		<div> Title:{{post.postDetails.title}}</div>
-		<pre class="prettyprint">{{post.postDetails.content}}</pre>
-
-		
+	<article class="message">
+  		<div id="codeTitle" class="message-header"> Title:{{post.postDetails.title}}</div>
+		<div class="message-body"><pre class="prettyprint">{{post.postDetails.content}}</pre></div>
+	</article>	
 </div>
 
 <form  ng-submit = "post.createComment(post.comment)">
-	<label class="label" > Comments </label>
+	<label class= "style_Htag" class="label" > Comments </label>
 	<textarea class="textarea" ng-model = "post.comment.content"></textarea>
-	<button type="submit"> Add Comment </button>
+	<button class="button is-dark" id="styleAddCommentButton" type="submit"> Add Comment </button>
 </form>
-<div>
-	<di  ng-repeat = "comment in post.comments">
-	<div class = "styling_display_comment" >
-		<div id="category"> Comment : {{comment.content}}</div>
-		<button type="button" ng-click = "post.removeComment(comment.post_id,comment.id)"> Delete Comment </button></a>
+
+<div  ng-repeat = "comment in post.comments">
+	<div id = "styling_display_comment" class ="box" >
+		<div id="styleComment">{{comment.content}}</div>
+		<div id = "stlyeDeleteCommentButton"><button class="button is-danger" type="button" ng-click = "post.removeComment(comment.post_id,comment.id)"> Delete Comment </button></div>
 	</div>
 	
 </div>
 
-<a ui-sref = "root.user.class.list"><button type="button" id="backbutton"> Back </button></a>
+<a ui-sref = "root.user.class.list"><button class="button is-dark" type="button" id="backbutton"> Back </button></a>
+</div>

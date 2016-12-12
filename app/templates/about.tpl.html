@@ -1,8 +1,3 @@
-<h1></h1>
-
-<!-- <div id="left-assignments"><a ui-sref="root.user.class.addassignment({ id: about.id })"><button type="button"> Create Assignment </button></a></div>
-<div id="left-assignments"><a ui-sref="root.user.class.enabledassignments({ id: about.id })"><button type="button">  Assignment List </button></a></div> -->
-
 <div class="box">
 
   <div class="box">
@@ -19,11 +14,6 @@
       <form class="styling_aboutform" ng-submit = "about.createPost()">
         <label class="label" ng-show = "about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'"> Title </label>
           <input class="input" type="text" ng-model ="about.post.title" ng-show = "about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'">
-
-          <select ng-show = "about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'"> class="styling_selectcategory" value = "assignment_id" ng-model ="about.post.assignment_id" >
-            <option value="" disabled selected>Please Select Category...</option>
-            <option value="assignment_id" ng-controller= "EnabledAssignmentsController">{{enabled.title}}</option>
-          </select>
 
         <label class="label" ng-show="about.post.category == 'question'"> Question </label>
         <textarea class="textarea" ng-model="about.post.content" ng-show="about.post.category == 'question'"></textarea>
@@ -43,9 +33,7 @@
 
   <div class="box">
     <div id="left-assignments"><a ui-sref="root.user.class.addassignment({ id: about.id })"><button type="button"> Create Assignment </button></a></div>
-
     <div class="column" ui-view="enabledassignments">
-
     </div>
   </div>
 

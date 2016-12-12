@@ -1,7 +1,7 @@
-<h3 class="title">Add Class</h3>
+<!-- <h3 class="title">Add Class</h3> -->
 
-<form name="" ng-submit="addclass.createclass(addclass.class)">
-  <p class="control">
+<!-- <form name="" ng-submit="addclass.createclass(addclass.class)"> -->
+  <!-- <p class="control">
     <input  type="text" placeholder="Class Name"
            ng-model="addclass.class.className" required />
   </p>
@@ -13,6 +13,49 @@
    <input type="text" placeholder="Campus"
           ng-model="addclass.class.campus" required />
  </p>
- <button type= "submit"> Create Class</button>
- <a ui-sref = "root.user.class.list"><button type="button" id="backbutton"> Back </button></a>
-</form>
+ <button type= "submit"> Create Class</button> -->
+ <!-- <a ui-sref = "root.user.class.list"><button type="button" id="backbutton"> Back </button></a> -->
+<!-- </form> -->
+
+
+
+<div class="box">
+
+  <div class="card is-fullwidth">
+      <section class="hero is-dark">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title nav-center">
+              Add Class
+            </h1>
+          </div>
+        </div>
+      </section>
+    <div class="card-content">
+      <div class="content section">
+        <form name="" ng-submit="addclass.createclass(addclass.class)">
+          <p class="control">
+            <input class = "input" type="text" placeholder="Class Name"
+                   ng-model="addclass.class.className" required />
+          </p>
+          <p class="control">
+            <input class = "input" type="text" placeholder="Instructor Name"
+                   ng-model="addclass.class.instructor" required />
+          </p>
+         <p class="control">
+           <input class = "input" type="text" placeholder="Campus"
+                  ng-model="addclass.class.campus" required />
+         </p>
+         <button class = "button is-dark nav-center" type= "submit"> Create Class</button>
+
+        </form>
+      </div>
+    </div>
+    <p class="hero is-dark section">
+      <a ui-sref = "root.user.class.list"><button class = "button is-dark is-medium nav-center" type="button" id="backbutton"> Back </button></a>
+    </p>
+
+  </div>
+
+</div>
+>>>>>>> master:app/templates/addclass.tpl.html
