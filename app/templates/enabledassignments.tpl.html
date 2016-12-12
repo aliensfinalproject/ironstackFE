@@ -17,10 +17,12 @@
       </span>
     <span>{{item.class_id}}</span>
     <div>
+      <span id= "week-style">Description:
+      </span>
+    <span>{{item.description}}</span>
+    <div>
   <button type="button" class= "button is-outlined is-info" ng-click="enabled.deleteassignment(item.id)"> Delete </button></a>
+  <a ui-sref="root.user.class.assignmentabout({id: enabled.class_id, assignment_id:enabled.id})" class="btn btn-primary">List</a>
   </div>
   </li>
 </ul>
-
-<a ui-sref = "root.user.class.addassignment({id: enabled.id})"><button class= "button is-outlined is-info"> Back to Add Assignments Form </button></a>
-<a ui-sref = "root.user.class.about({id:enabled.class_id})"><button class= "button is-outlined is-info"> Back to Class Home </button></a>

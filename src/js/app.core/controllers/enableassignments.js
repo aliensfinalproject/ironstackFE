@@ -1,8 +1,8 @@
 function EnabledAssignmentsController(UserService,$state,$rootScope,$scope,$stateParams){
     let vm = this;
    vm.list = [];
-
-
+   vm.class_id = $stateParams.id;
+  //  vm.assignment_id = $stateParams.id; 
 
    vm.listassignments = function(){
     UserService.getAssignments($stateParams.id).then(

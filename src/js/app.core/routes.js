@@ -41,13 +41,14 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     views: {
       '' : {
         templateUrl: 'templates/about.tpl.html',
-        controller: 'AboutController as about'
+        controller: 'AboutController as about',
+        params: {id:null}
       }, 'enabledassignments@root.user.class.about': {
         templateUrl: 'templates/enabledassignments.tpl.html',
         controller: 'EnabledAssignmentsController as enabled'
       }
     },
-    params: {id:null}
+
    })
     .state('root.user.class.postDetails', {
     url: '/postDetails/:class_id/:id',
@@ -74,7 +75,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
    .state('root.user.class.assignmentabout', {
     url: '/about/:id/assignment/assignment_id',
     templateUrl: 'templates/aboutassignments.tpl.html',
-    controller: 'aboutassignmentsController as aboutassignments',
+    controller: 'AboutAssignmentsController as aboutassignments',
     // params: {id:null}
    })
   //  .state('root.user.class.about.enabledassignments', {
