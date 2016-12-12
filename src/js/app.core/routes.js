@@ -64,8 +64,13 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/home.tpl.html',
     controller: 'HomeController as home'
    })
+    .state('root.user.profile', {
+    url:'/profile',
+    templateUrl: 'templates/profile.tpl.html',
+    controller: 'ProfileController as profile'
+   })
 
-
+ 
  $urlRouterProvider.otherwise('/login');
 };
 
