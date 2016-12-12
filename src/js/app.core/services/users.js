@@ -112,12 +112,15 @@ function updateAssignment(id){
   function logout () {
     $cookies.remove('username');
     $cookies.remove('access_token');
+    $cookies.remove('classId');
+    $cookies.remove('admin');
   }
 
   function setUser (data) {
     $cookies.put('username', data.username);
     $cookies.put('access_token', data.access_token);
     $cookies.put('admin', data.admin ? '1' : '0');
+    $cookies.put('classId', data.class_id);
   }
 
   function getHeaders () {
