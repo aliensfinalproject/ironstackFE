@@ -1,4 +1,4 @@
-function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
+function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$http){
 	let vm = this;
 	vm.postDetails ={}
 	vm.comments =[]
@@ -14,6 +14,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 				var video_url = base_url.concat(reqdCode);
 				vm.display_url= $sce.trustAsResourceUrl(video_url)
 				
+				
 			})
 
 	}
@@ -23,6 +24,14 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 		UserService.addComment(comment, $stateParams.id).then(
 
 			resp =>{ 
+				$http({
+					method: 'POST',
+					url:'https://hooks.slack.com/services/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',
+					data: {"text":"New Comment on "+vm.postDetails.title+": " + vm.comment.content + " <http://localhost:8081/#/class/postDetails/"+ vm.postDetails.class_id + "/" + vm.postDetails.id + ">"},
+					headers: {
+						'content-type': undefined
+					}
+				})
 				vm.readComments();
 				vm.comment ="";
 			})
@@ -45,5 +54,5 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce){
 			})
 	}
 }
-PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce'];
+PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce','$http'];
 export{ PostDetailsController };
