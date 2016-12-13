@@ -18,6 +18,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.addComment = addComment;
   this.getComments = getComments;
   this.userProfile = userProfile;
+  this.getuserProfile = getuserProfile;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
   this.setUser = setUser;
@@ -76,21 +77,24 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   }
   function addComment(comment,post_id){
     return $http.post(`${SERVER}/post/${post_id}/comment`,comment,{headers:getHeaders()});
- }
- function getComments(post_id){
+  }
+  function getComments(post_id){
   return $http.get(`${SERVER}/post/${post_id}/comments`,{headers:getHeaders()});
- }
- function deleteComment(post_id,id){
+  }
+  function deleteComment(post_id,id){
   return $http.delete(`${SERVER}/post/${post_id}/comments/${id}`,{headers:getHeaders()});
- }
- function userProfile(user){
-    return $http.post(`${SERVER}/slackuser/`,user,{headers:getHeaders()});
-
+  }
+  function userProfile(user){
+  return $http.post(`${SERVER}/slackuser/`,user,{headers:getHeaders()});
+  }
+  function getuserProfile(){
+  return $http.get(`${SERVER}/userProfile/`,{headers:getHeaders()});
   }
 
- function addAssignment(assignment){
+
+  function addAssignment(assignment){
    return $http.post(`${SERVER}/assignment/`, assignment,  {headers:getHeaders()});
-}
+  }
 function getAssignments(class_id){
  return $http.get(`${SERVER}/${class_id}/assignments/`, {headers:getHeaders()});
 }
