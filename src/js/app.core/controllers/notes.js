@@ -8,7 +8,7 @@ function NotesController (UserService){
     UserService.addNote(vm.note).then(resp => {
       console.log(resp)
       vm.notes = resp.data
-      // vm.note = "";
+      vm.note = "";
       vm.readNotes();
 
     })
