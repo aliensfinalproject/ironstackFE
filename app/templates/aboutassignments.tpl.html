@@ -15,7 +15,7 @@
            </td>
            <td>
              <ul>
-             <li<div><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(question.class_id,question.id)"> x </button></div></a></li>
+             <li<div ng-if="aboutassignments.isAdmin"><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(question.class_id,question.id)"> x </button></div></a></li>
              </ul>
            </td>
          </tr>
@@ -36,7 +36,7 @@
            </td>
            <td>
              <ul>
-             <li<div><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(video.class_id,video.id)"> x </button></div></a></li>
+             <li<div ng-if="aboutassignments.isAdmin"><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(video.class_id,video.id)"> x </button></div></a></li>
              </ul>
            </td>
        </tr>
@@ -62,7 +62,7 @@
            </td>
            <td>
              <ul>
-             <li<div><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(code.class_id,code.id)"> x </button></div></a></li>
+             <li<div ng-if="aboutassignments.isAdmin"><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(code.class_id,code.id)"> x </button></div></a></li>
              </ul>
            </td>
          </tr>
@@ -83,7 +83,7 @@
            </td>
            <td>
              <ul>
-             <li<div><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(status.class_id,status.id)"> x </button></div></a></li>
+             <li<div ng-if="aboutassignments.isAdmin"><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(status.class_id,status.id)"> x </button></div></a></li>
              </ul>
            </td>
        </tr>
@@ -91,6 +91,7 @@
      </div>
    </div>
  </div>
+
  <div class="box" ng-if="!aboutassignments.posts.length">
    No posts to display for this assignment.
  </div>

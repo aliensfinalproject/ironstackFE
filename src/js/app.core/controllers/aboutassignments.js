@@ -7,6 +7,7 @@ function AboutAssignmentsController(UserService,$state,$rootScope,$stateParams){
 	vm.comments =[];
 	vm.count="";
 	vm.showComments = false;
+	vm.isAdmin = UserService.isAdmin();
 
 	vm.questions = [];
 	vm.videos = [];
@@ -30,7 +31,7 @@ function AboutAssignmentsController(UserService,$state,$rootScope,$stateParams){
 					})
 
 				})
-		
+
 		}
 		// vm.getPostDetails();
 
