@@ -15,8 +15,9 @@ function HomeController(UserService,$state,$rootScope){
 				vm.questions = vm.userposts.filter(function(userpost){
 					return userpost.category === 'question';
 				})
-				for(let i=0; i<vm.questions.length; i++){
-					vm.questions[i].created_at = moment(vm.questions[i].created_at).format('MMMM Do YYYY')
+				for(let i=0 ; i<vm.questions.length;i++){
+				 vm.questions[i].created_at = moment(vm.questions[i].created_at).format('MMMM Do YYYY')
+
 				}
 
 				vm.videos = vm.userposts.filter(function(userpost){
