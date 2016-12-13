@@ -1,28 +1,29 @@
 <div class="box">
 
-  <header>
-   <nav class="nav">
-     <div class="nav-left">
-       <a class="nav-item" ng-show="!layout.admin" ui-sref="root.user.class.about({ id: layout.classId })"><img src ="../images/IronStackMed.png"></a>
-       <a class="nav-item" ng-show="layout.admin" ui-sref="root.user.class.list"><img src ="../images/IronStackMed.png"></a>
-     </div>
-     <div class="nav-right nav-menu">
-       <a class="nav-item" ui-sref="root.user.home" ng-show = "!layout.admin">My Posts</a>
-       <a class="nav-item" ui-sref="root.user.profile" ng-show = "!layout.admin">My Profile</a>
-       <a class="nav-item" ui-sref="root.user.myNotes" ng-show = "!layout.admin">My Notes</a>
-       <a class="nav-item" href="#/register"
-          ng-show="!layout.loggedIn">Sign Up</a>
-       <a class="nav-item" href="#/login"
-          ng-show="!layout.loggedIn">Login</a>
-       <a class="nav-item" href="#/"
-          ng-show="layout.loggedIn"
-          ng-click="layout.logout()">Logout</a>
-     </div>
-   </nav>
-  </header>
+  <div class="box">
+    <header>
+     <nav class="nav">
+       <div class="nav-left">
+         <a class="nav-item" ng-show="!layout.admin" ui-sref="root.user.class.about({ id: layout.classId })"><img src ="../images/IronStackMed.png"></a>
+         <a class="nav-item" ng-show="layout.admin" ui-sref="root.user.class.list"><img src ="../images/IronStackMed.png"></a>
+       </div>
+       <div class="nav-right nav-menu">
+         <a class="nav-item" ui-sref="root.user.home" ng-show = "!layout.admin">My Posts</a>
+         <a class="nav-item" ui-sref="root.user.profile" ng-show = "!layout.admin">My Profile</a>
+         <a class="nav-item" ui-sref="root.user.myNotes" ng-show = "!layout.admin">My Notes</a>
+         <a class="nav-item" href="#/register"
+            ng-show="!layout.loggedIn">Sign Up</a>
+         <a class="nav-item" href="#/login"
+            ng-show="!layout.loggedIn">Login</a>
+         <a class="nav-item" href="#/"
+            ng-show="layout.loggedIn"
+            ng-click="layout.logout()">Logout</a>
+       </div>
+     </nav>
+    </header>
+  </div>
 
   <div class="wrapper" ui-view>
   </div>
-
 
 </div>
