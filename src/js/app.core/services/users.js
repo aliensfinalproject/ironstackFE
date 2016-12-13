@@ -27,6 +27,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getAssignments = getAssignments;
   this.updateAssignment = updateAssignment;
   this.deleteAssignment = deleteAssignment;
+  this.getPostAssignments = getPostAssignments;
 
   function create (user) {
     return $http.post(`${SERVER}/register`, user);
@@ -67,6 +68,9 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   }
   function getPost(class_id,post_id){
     return $http.get(`${SERVER}/class/${class_id}/post/${post_id}`,{headers:getHeaders()});
+  }
+  function getPostAssignments(class_id,assignment_id){
+    return $http.get(`${SERVER}/class/${class_id}/assignment/${assignment_id}`,{headers:getHeaders()});
   }
   function deletePost(class_id,post_id){
     return $http.delete(`${SERVER}/class/${class_id}/post/${post_id}`,{headers:getHeaders()});

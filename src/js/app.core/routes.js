@@ -4,6 +4,10 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
      abstract: true,
      templateUrl: 'templates/root.tpl.html'
    })
+   .state('root.error', {
+      templateUrl: 'templates/error.tpl.html'
+
+   })
    .state('root.main', {
      url: '/',
      templateUrl: 'templates/main.tpl.html'
@@ -87,7 +91,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     url: '/about/:id/assignment/:assignment_id',
     templateUrl: 'templates/aboutassignments.tpl.html',
     controller: 'AboutAssignmentsController as aboutassignments',
-    // params: {id:null}
+
    })
    .state('root.user.class.about.enabledassignments', {
    url: '/:id/enabledassignments',

@@ -4,13 +4,11 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 	vm.posts = [];
 	vm.id = $stateParams.id;
 	vm.assignments = [];
-
+	vm.isAdmin = UserService.isAdmin();
 	vm.user={};
 	vm.classOptions = []
 	vm.className=""
 	vm.classID=""
-
-	vm.user= UserService.isAdmin();
 	vm.questions = [];
 	vm.videos = [];
 	vm.codes = [];
@@ -28,8 +26,9 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 
 	vm.createPost = function(){
 		UserService.addPost(vm.post, $stateParams.id).then(
+			// vm.post.class_id = Number($stateParams.id);
 			resp =>{
-
+				console.log(resp.data)
 				vm.post = resp.data
 				vm.classID = vm.posts[0].class_id
 				$http({
@@ -49,7 +48,8 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 	}
 
 	vm.readPost = function(){
-		UserService.getPosts($stateParams.id).then(
+		console.log('not numb ', Number($stateParams.id) == 'NaN')
+		if (Number($stateParams.id)) UserService.getPosts($stateParams.id).then(
 			resp => {
 
 				vm.posts = resp.data
@@ -79,26 +79,33 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 	}
 
 
-vm.listclasses = function(){
-	 	UserService.getClasses().then(
-	 		resp =>{
-	 			vm.classOptions = resp.data;
-	 			for(let i =0; i<vm.classOptions.length;i++){
-	 				if(vm.classID == vm.classOptions[i].id)
-	 				vm.className = vm.classOptions[i].className
+	vm.listclasses = function(){
+		 	UserService.getClasses().then(
+		 		resp =>{
+		 			vm.classOptions = resp.data;
+		 			for(let i =0; i<vm.classOptions.length;i++){
+		 				if(vm.classID == vm.classOptions[i].id)
+		 				vm.className = vm.classOptions[i].className
 
-	 			}
+		 			}
 
-	 		})
-}
+		 		})
+	}
 
-function init () {
-	vm.readPost();
-	vm.listclasses();
-	getAssignments();
-}
+	function init () {
+		console.log('inside init')
+		console.log('vm.id is', vm.id)
+		console.log(!Number(vm.id), typeof(Number(vm.id)) === 'number')
+		  if (!vm.id || !Number(vm.id)) {
+				$state.go('root.error');
+			}	else {
+		    vm.readPost();
+		    vm.listclasses();
+		    getAssignments();
+			}
+	}
 
-init();
+	init();
 
 }
 

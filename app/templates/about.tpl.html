@@ -2,14 +2,14 @@
 
   <div class="box">
    <div class="column">
-     <h1 class= "title is-2"> {{ about.className}}</h1>
+     <h1 class= "title is-2">{{ about.className}}</h1>
         </div>
 
   <div class="box">
 
   <div ui-view="enabledassignments">
   </div>
-    <div id="left-assignments"><a ui-sref="root.user.class.addassignment({ id: about.id })"><button class= "button is-outlined is-info"> Create Assignment </button></a></div>
+    <div ng-if= "about.isAdmin" id="left-assignments"><a ui-sref="root.user.class.addassignment({ id: about.id })"><button class= "button is-outlined is-info"> Create Assignment </button></a></div>
   </div>
 
   <div class="box">
@@ -88,7 +88,7 @@
            <tr ng-repeat = "video in about.videos" >
              <td>
                <ul>
-               <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:qvideo.class_id})">{{video.title}}</li>
+               <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:video.class_id})">{{video.title}}</li>
                </ul>
              </td>
              <td>

@@ -3,10 +3,11 @@ function EnabledAssignmentsController(UserService,$state,$rootScope,$scope,$stat
    vm.list = [];
    vm.assignment = [];
    vm.class_id = $stateParams.id;
+   vm.isAdmin = UserService.isAdmin();
   //  vm.assignment_id = $stateParams.id;
 
    vm.listassignments = function(){
-    UserService.getAssignments($stateParams.id).then(
+    if (Number($stateParams.id)) UserService.getAssignments($stateParams.id).then(
       resp =>{
         vm.list = resp.data;
         console.log (resp.data)
