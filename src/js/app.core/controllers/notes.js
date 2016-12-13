@@ -1,3 +1,4 @@
+import moment from 'moment';
 function NotesController (UserService){
 
   let vm = this
@@ -6,7 +7,7 @@ function NotesController (UserService){
 
   vm.createNote = function () {
     UserService.addNote(vm.note).then(resp => {
-      console.log(resp)
+      // console.log(resp)
       vm.notes = resp.data
       vm.note = "";
       vm.readNotes();
@@ -16,8 +17,12 @@ function NotesController (UserService){
 
   vm.readNotes = function () {
     UserService.getNotes().then(resp => {
-      // console.log(resp)
+      console.log(resp)
       vm.notes = resp.data
+      for(let i=0 ; i<vm.notes.length;i++){
+       vm.notes[i].created_at = moment(vm.notes[i].created_at).format('MMMM Do YYYY')
+
+      }
     })
   }
     vm.readNotes();
