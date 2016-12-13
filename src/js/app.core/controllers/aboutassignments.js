@@ -1,3 +1,4 @@
+import moment from 'moment';
 function AboutAssignmentsController(UserService,$state,$rootScope,$stateParams){
 	let vm = this
 	vm.post = {}
@@ -47,15 +48,32 @@ function AboutAssignmentsController(UserService,$state,$rootScope,$stateParams){
 					vm.questions = vm.posts.filter(function(post){
 						return post.category === 'question';
 					})
+					for(let i=0 ; i<vm.questions.length;i++){
+					 vm.questions[i].created_at = moment(vm.questions[i].created_at).format('MMMM Do YYYY')
+
+					}
+
 					vm.videos = vm.posts.filter(function(post){
 						return post.category === 'video';
 					})
+					for(let i=0 ; i<vm.videos.length;i++){
+					 vm.videos[i].created_at = moment(vm.videos[i].created_at).format('MMMM Do YYYY')
+
+					}
 					vm.codes = vm.posts.filter(function(post){
 						return post.category === 'code';
 					})
+					for(let i=0 ; i<vm.codes.length;i++){
+					 vm.codes[i].created_at = moment(vm.codes[i].created_at).format('MMMM Do YYYY')
+
+					}
 					vm.statuses = vm.posts.filter(function(post){
 						return post.category === 'status';
 					})
+					for(let i=0 ; i<vm.statuses.length;i++){
+					 vm.statuses[i].created_at = moment(vm.statuses[i].created_at).format('MMMM Do YYYY')
+
+					}
 					console.log("questions : ", vm.questions)
 					console.log("videos : ", vm.videos)
 					console.log("codes : ", vm.codes)

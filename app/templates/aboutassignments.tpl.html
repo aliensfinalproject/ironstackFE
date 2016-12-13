@@ -5,7 +5,8 @@
        <table class = "table is-striped" style="width:100%">
          <tr>
            <th>Title</th>
-           <th>Delete</th>
+           <th>Post Date</th>
+           <th ng-if="aboutassignments.isAdmin">Delete</th>
          </tr>
          <tr ng-repeat = "question in aboutassignments.questions" >
            <td>
@@ -13,6 +14,11 @@
              <li ui-sref= "root.user.class.postDetails({id: question.id,class_id:question.class_id})">{{question.title}}</li>
              </ul>
            </td>
+           <td>
+              <ul>
+              <li> <div> {{ question.created_at }}</div></li>
+              </ul>
+            </td>
            <td>
              <ul>
              <li<div ng-if="aboutassignments.isAdmin"><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(question.class_id,question.id)"> x </button></div></a></li>
@@ -26,7 +32,8 @@
        <table class = "table is-striped" style="width:100%">
          <tr>
            <th>Title</th>
-           <th>Delete</th>
+           <th>Post Date</th>
+           <th ng-if="aboutassignments.isAdmin">Delete</th>
          </tr>
          <tr ng-repeat = "video in aboutassignments.videos" >
            <td>
@@ -34,6 +41,11 @@
              <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:qvideo.class_id})">{{video.title}}</li>
              </ul>
            </td>
+           <td>
+              <ul>
+              <li> <div> {{ video.created_at }}</div></li>
+              </ul>
+            </td>
            <td>
              <ul>
              <li<div ng-if="aboutassignments.isAdmin"><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(video.class_id,video.id)"> x </button></div></a></li>
@@ -52,7 +64,8 @@
        <table class = "table is-striped" style="width:100%">
          <tr>
            <th>Title</th>
-           <th>Delete</th>
+           <th>Post Date</th>
+           <th ng-if="aboutassignments.isAdmin">Delete</th>
          </tr>
          <tr ng-repeat = "code in aboutassignments.codes" >
            <td>
@@ -60,6 +73,12 @@
              <li ui-sref= "root.user.class.postDetails({id: code.id,class_id:code.class_id})">{{code.title}}</li>
              </ul>
            </td>
+           <td>
+              <ul>
+              <li> <div> {{ code.created_at }}</div></li>
+              </ul>
+            </td>
+
            <td>
              <ul>
              <li<div ng-if="aboutassignments.isAdmin"><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(code.class_id,code.id)"> x </button></div></a></li>
@@ -73,7 +92,8 @@
        <table class = "table is-striped" style="width:100%">
          <tr>
            <th>Title</th>
-           <th>Delete</th>
+           <th>Post Date</th>
+           <th ng-if="aboutassignments.isAdmin">Delete</th>
          </tr>
          <tr ng-repeat = "status in aboutassignments.statuses" >
            <td>
@@ -81,6 +101,11 @@
              <li ui-sref= "root.user.class.postDetails({id: status.id,class_id:status.class_id})">{{status.title}}</li>
              </ul>
            </td>
+           <td>
+              <ul>
+              <li> <div> {{ status.created_at }}</div></li>
+              </ul>
+            </td>
            <td>
              <ul>
              <li<div ng-if="aboutassignments.isAdmin"><button  class = "button is-danger" type="button"  ng-click = "aboutassignments.removePost(status.class_id,status.id)"> x </button></div></a></li>
