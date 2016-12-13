@@ -12,9 +12,16 @@
     <table class = "table is-striped" style="width:100%">
       <h1 class="title">My Notes</h1>
       <tr>
+        <th>Created At</th>
         <th>Note</th>
       </tr>
       <tr ng-repeat = "note in notes.notes" >
+        <td>
+          <ul>
+          <li>{{note.created_at}}</li>
+          </ul>
+        </td>
+
         <td>
           <ul>
           <li>{{note.content}}</li>
