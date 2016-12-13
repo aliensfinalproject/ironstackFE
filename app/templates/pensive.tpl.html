@@ -2,9 +2,9 @@
 
   <div class="box">
     <h1 class ="title">Add Note</h1>
-    <form name="addNote-form" ng-submit="notes.createNote(note)">
-      <input class="input" type="text" ng-model="note.content">
-      <button class = "button is-dark" ng-click="createNote(note)"> Save Note </button>
+    <form name="addNote-form" ng-submit="notes.createNote()">
+      <input class="input" type="text" ng-model="notes.note.content">
+      <button class = "button is-dark" type = "submit"> Save Note </button>
     </form>
   </div>
 

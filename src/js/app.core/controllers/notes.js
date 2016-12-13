@@ -4,19 +4,23 @@ function NotesController (UserService){
   vm.note = {};
   vm.notes = [];
 
-  vm.createNote = function (note) {
-    UserService.addNote(note).then(resp => {
-      vm.note = resp.data
+  vm.createNote = function () {
+    UserService.addNote(vm.note).then(resp => {
+      console.log(resp)
+      vm.notes = resp.data
+      // vm.note = "";
+      vm.readNotes();
+
     })
   }
 
   vm.readNotes = function () {
     UserService.getNotes().then(resp => {
-      console.log(resp)
+      // console.log(resp)
       vm.notes = resp.data
     })
   }
-  vm.readNotes();
+    vm.readNotes();
 
 }
 
