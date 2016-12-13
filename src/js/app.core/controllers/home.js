@@ -1,3 +1,4 @@
+import moment from 'moment';
 function HomeController(UserService,$state,$rootScope){
 	let vm =this
 	vm.userposts = [];
