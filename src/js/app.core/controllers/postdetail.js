@@ -1,7 +1,7 @@
 function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$http){
 	let vm = this;
-	vm.postDetails ={}
-	vm.comments =[]
+	vm.postDetails ={};
+	vm.comments =[];
 	vm.count="";
 	vm.showComments = false;
 
@@ -67,5 +67,5 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 	}
 }
 
-PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce'];
+PostDetailsController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$sce', '$http'];
 export{ PostDetailsController };
