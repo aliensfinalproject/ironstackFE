@@ -6,19 +6,19 @@
          <h1 class = "title nav-center">My Questions</h1>
          <table class = "table is-striped" style="width:100%">
            <tr>
-             <th>Post Date</th>
              <th>Title</th>
+             <th>Post Date</th>
              <th>Delete</th>
            </tr>
            <tr ng-repeat = "question in home.questions" >
              <td>
                <ul>
-               <li>{{question.created_at}}</li>
+               <li ui-sref= "root.user.class.postDetails({id: question.id,class_id:question.class_id})">{{question.title}}</li>
                </ul>
              </td>
              <td>
                <ul>
-               <li ui-sref= "root.user.class.postDetails({id: question.id,class_id:question.class_id})">{{question.title}}</li>
+               <li>{{question.created_at}}</li>
                </ul>
              </td>
              <td>
@@ -33,19 +33,19 @@
          <h1 class = "title nav-center">My Videos</h1>
          <table class = "table is-striped" style="width:100%">
            <tr>
-             <th>Post Date</th>
              <th>Title</th>
+             <th>Post Date</th>
              <th>Delete</th>
            </tr>
            <tr ng-repeat = "video in home.videos" >
              <td>
                <ul>
-               <li>{{video.created_at}}</li>
+               <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:video.class_id})">{{video.title}}</li>
                </ul>
              </td>
              <td>
                <ul>
-               <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:video.class_id})">{{video.title}}</li>
+               <li>{{video.created_at}}</li>
                </ul>
              </td>
              <td>
@@ -65,19 +65,19 @@
           <h1 class = "title nav-center">My Code Snippets</h1>
           <table class = "table is-striped" style="width:100%">
             <tr>
-              <th>Post Date</th>
               <th>Title</th>
+              <th>Post Date</th>
               <th>Delete</th>
             </tr>
             <tr ng-repeat = "code in home.codes" >
               <td>
                 <ul>
-                <li>{{code.created_at}}</li>
+                <li ui-sref= "root.user.class.postDetails({id: code.id,class_id:code.class_id})">{{code.title}}</li>
                 </ul>
               </td>
               <td>
                 <ul>
-                <li ui-sref= "root.user.class.postDetails({id: code.id,class_id:code.class_id})">{{code.title}}</li>
+                <li>{{code.created_at}}</li>
                 </ul>
               </td>
               <td>
@@ -92,19 +92,19 @@
           <h1 class = "title nav-center">My Statuses</h1>
           <table class = "table is-striped" style="width:100%">
             <tr>
-              <th>Post Date</th>
               <th>Title</th>
+              <th>Post Date</th>
               <th>Delete</th>
             </tr>
             <tr ng-repeat = "status in home.statuses" >
               <td>
                 <ul>
-                <li>{{status.created_at}}</li>
+                <li ui-sref= "root.user.class.postDetails({id: status.id,class_id:status.class_id})">{{status.title}}</li>
                 </ul>
               </td>
               <td>
                 <ul>
-                <li ui-sref= "root.user.class.postDetails({id: status.id,class_id:status.class_id})">{{status.title}}</li>
+                <li>{{status.created_at}}</li>
                 </ul>
               </td>
               <td>

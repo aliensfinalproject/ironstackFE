@@ -61,22 +61,22 @@
          <h1 class = "title nav-center">Questions</h1>
          <table class = "table is-striped" style="width:100%">
            <tr>
+             <th>Title</th>
             <th>Post Date</th>
-             <th>Title</th> 
              <th ng-if="about.isAdmin">Delete</th>
 
            </tr>
            <tr ng-repeat = "question in about.questions" >
-            <td>
-               <ul>
-               <li> <div> {{ question.created_at }}</div></li>
-               </ul>
-             </td>
              <td>
                <ul>
                <li ui-sref= "root.user.class.postDetails({id: question.id,class_id:question.class_id})">{{question.title}}</li>
                </ul>
              </td>
+             <td>
+                <ul>
+                <li> <div> {{ question.created_at }}</div></li>
+                </ul>
+              </td>
               <td ng-if="about.isAdmin">
                <ul>
                <li> <div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(question.class_id,question.id)" > x </button></div></li>
@@ -89,21 +89,21 @@
          <h1 class = "title nav-center">Videos</h1>
          <table class = "table is-striped" style="width:100%">
            <tr>
-            <th>Post Date</th>
              <th>Title</th>
+            <th>Post Date</th>
              <th ng-if="about.isAdmin">Delete</th>
            </tr>
            <tr ng-repeat = "video in about.videos" >
-           <td>
-               <ul>
-               <li> <div> {{video.created_at}}</div></li>
-               </ul>
-             </td>
              <td>
                <ul>
                <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:qvideo.class_id})">{{video.title}}</li>
                </ul>
              </td>
+             <td>
+                 <ul>
+                 <li> <div> {{video.created_at}}</div></li>
+                 </ul>
+               </td>
              <td ng-if="about.isAdmin">
                <ul>
                <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(video.class_id,video.id)"> x </button></div></a></li>
@@ -121,21 +121,21 @@
          <h1 class = "title nav-center">Code Snippets</h1>
          <table class = "table is-striped" style="width:100%">
            <tr>
-            <th>Post Date</th>
              <th>Title</th>
+            <th>Post Date</th>
              <th ng-if="about.isAdmin">Delete</th>
            </tr>
            <tr ng-repeat = "code in about.codes" >
-           <td>
-               <ul>
-               <li> <div> {{code.created_at}}</div></li>
-               </ul>
-             </td>
              <td>
                <ul>
                <li ui-sref= "root.user.class.postDetails({id: code.id,class_id:code.class_id})">{{code.title}}</li>
                </ul>
              </td>
+             <td>
+                 <ul>
+                 <li> <div> {{code.created_at}}</div></li>
+                 </ul>
+               </td>
              <td ng-if="about.isAdmin">
                <ul>
                <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(code.class_id,code.id)"> x </button></div></a></li>
@@ -148,21 +148,21 @@
          <h1 class = "title nav-center">Statuses</h1>
          <table class = "table is-striped" style="width:100%">
            <tr>
-            <th>Post Date</th>
              <th>Title</th>
+            <th>Post Date</th>
              <th ng-if="about.isAdmin">Delete</th>
            </tr>
            <tr ng-repeat = "status in about.statuses" >
-           <td>
-               <ul>
-               <li> <div> {{status.created_at}}</div></li>
-               </ul>
-             </td>
              <td>
                <ul>
                <li ui-sref= "root.user.class.postDetails({id: status.id,class_id:status.class_id})">{{status.title}}</li>
                </ul>
              </td>
+             <td>
+                 <ul>
+                 <li> <div> {{status.created_at}}</div></li>
+                 </ul>
+               </td>
              <td ng-if="about.isAdmin">
                <ul>
                <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(status.class_id,status.id)" > x </button></div></a></li>
