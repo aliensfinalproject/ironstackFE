@@ -27,6 +27,8 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getAssignments = getAssignments;
   this.updateAssignment = updateAssignment;
   this.deleteAssignment = deleteAssignment;
+  this.addNote = addNote;
+  this.getNotes = getNotes;
 
   function create (user) {
     return $http.post(`${SERVER}/register`, user);
@@ -99,6 +101,12 @@ function deleteAssignment (id) {
 }
 function updateAssignment(id){
  return $http.get(`${SERVER}/${assignment}/${id}/`, {headers:getHeaders()});
+}
+function addNote (note) {
+  return $http.post(`${SERVER}/userNote`, note, {headers:getHeaders()});
+}
+function getNotes () {
+  return $http.get(`${SERVER}/userNotes`, {headers:getHeaders()});
 }
 
   function isLoggedIn () {

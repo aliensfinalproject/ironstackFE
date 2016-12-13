@@ -2,12 +2,26 @@
 
   <div class="box">
     <h1 class ="title">Add Note</h1>
-    <input class="input" type="text" value="">
-    <button class = "button is-dark" type="button"> Save Note </button>
+    <form name="addNote-form" ng-submit="notes.createNote(note)">
+      <input class="input" type="text" ng-model="note.content">
+      <button class = "button is-dark" ng-click="createNote(note)"> Save Note </button>
+    </form>
   </div>
 
   <div class="box">
-    <h1 class="title">My Notes</h1>
+    <table class = "table is-striped" style="width:100%">
+      <h1 class="title">My Notes</h1>
+      <tr>
+        <th>Note</th>
+      </tr>
+      <tr ng-repeat = "note in notes.notes" >
+        <td>
+          <ul>
+          <li>{{note.content}}</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
   </div>
 
 
