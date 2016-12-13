@@ -6,10 +6,10 @@
        <p class="nav-item"><img src ="../images/IronStackMed.png"></p>
      </div>
      <div class="nav-right nav-menu">
-       <div class="nav-item"><img class="profileImgSmall" ng-src="{{layout.userProfile.image_url}}"></div>
+       <div class="nav-item" ng-show = "layout.userProfile.image_url"><img class="profileImgSmall" ng-src="{{layout.userProfile.image_url}}"></div>
        <a class="nav-item" ui-sref="root.user.home" ng-show = "!layout.admin">My Posts</a>
        <a class="nav-item" ui-sref="root.user.profile" ng-show = "!layout.admin">My Profile</a>
-       <a class="nav-item" ui-sref="root.user.myNotes">My Notes</a>
+       <a class="nav-item" ui-sref="root.user.myNotes" ng-show = "!layout.admin">My Notes</a>
        <a class="nav-item" href="#/register"
           ng-show="!layout.loggedIn">Sign Up</a>
        <a class="nav-item" href="#/login"
