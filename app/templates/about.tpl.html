@@ -62,7 +62,7 @@
          <table class = "table is-striped" style="width:100%">
            <tr>
              <th>Title</th>
-             <th>Delete</th>
+             <th ng-if="about.isAdmin">Delete</th>
            </tr>
            <tr ng-repeat = "question in about.questions" >
              <td>
@@ -70,9 +70,9 @@
                <li ui-sref= "root.user.class.postDetails({id: question.id,class_id:question.class_id})">{{question.title}}</li>
                </ul>
              </td>
-             <td>
+             <td ng-if="about.isAdmin">
                <ul>
-               <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(question.class_id,question.id)"> x </button></div></a></li>
+               <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(question.class_id,question.id)" > x </button></div></a></li>
                </ul>
              </td>
            </tr>
@@ -83,7 +83,7 @@
          <table class = "table is-striped" style="width:100%">
            <tr>
              <th>Title</th>
-             <th>Delete</th>
+             <th ng-if="about.isAdmin">Delete</th>
            </tr>
            <tr ng-repeat = "video in about.videos" >
              <td>
@@ -91,7 +91,7 @@
                <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:qvideo.class_id})">{{video.title}}</li>
                </ul>
              </td>
-             <td>
+             <td ng-if="about.isAdmin">
                <ul>
                <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(video.class_id,video.id)"> x </button></div></a></li>
                </ul>
@@ -109,7 +109,7 @@
          <table class = "table is-striped" style="width:100%">
            <tr>
              <th>Title</th>
-             <th>Delete</th>
+             <th ng-if="about.isAdmin">Delete</th>
            </tr>
            <tr ng-repeat = "code in about.codes" >
              <td>
@@ -117,7 +117,7 @@
                <li ui-sref= "root.user.class.postDetails({id: code.id,class_id:code.class_id})">{{code.title}}</li>
                </ul>
              </td>
-             <td>
+             <td ng-if="about.isAdmin">
                <ul>
                <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(code.class_id,code.id)"> x </button></div></a></li>
                </ul>
@@ -130,7 +130,7 @@
          <table class = "table is-striped" style="width:100%">
            <tr>
              <th>Title</th>
-             <th>Delete</th>
+             <th ng-if="about.isAdmin">Delete</th>
            </tr>
            <tr ng-repeat = "status in about.statuses" >
              <td>
@@ -138,9 +138,9 @@
                <li ui-sref= "root.user.class.postDetails({id: status.id,class_id:status.class_id})">{{status.title}}</li>
                </ul>
              </td>
-             <td>
+             <td ng-if="about.isAdmin">
                <ul>
-               <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(status.class_id,status.id)"> x </button></div></a></li>
+               <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(status.class_id,status.id)" > x </button></div></a></li>
                </ul>
              </td>
          </tr>

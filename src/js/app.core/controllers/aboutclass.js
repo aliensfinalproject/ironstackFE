@@ -10,7 +10,7 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 	vm.className=""
 	vm.classID=""
 
-	vm.user= UserService.isAdmin();
+	vm.isAdmin= UserService.isAdmin();
 	vm.questions = [];
 	vm.videos = [];
 	vm.codes = [];
