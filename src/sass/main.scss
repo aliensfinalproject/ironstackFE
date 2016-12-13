@@ -125,3 +125,21 @@ a{
   max-height: 300px;
   overflow: auto;
 }
+
+.profileImg {
+  max-height: 100px;
+  max-width: 100px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+.profileImgSmall {
+  max-height: 24px;
+  max-width: 24px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.divCenter {
+  text-align: center;
+}
