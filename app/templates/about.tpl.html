@@ -7,7 +7,7 @@
  <div class="box seeThrough">
    <div ui-view="enabledassignments">
    </div>
-     <div id="left-assignments"><a ui-sref="root.user.class.addassignment({ id: about.id })"><button class= "button is-outlined is-info"> Create Assignment </button></a></div>
+     <div ng-if="about.isAdmin" id="left-assignments"><a ui-sref="root.user.class.addassignment({ id: about.id })"><button class= "button is-outlined is-info"> Create Assignment </button></a></div>
  </div>
 
  <div class="box seeThrough">
@@ -166,7 +166,7 @@
 
         <label class="label" ng-show="about.post.category == 'video'"> You-Tube Video </label>
         <input type="url" name="code_url" ng-model="about.post.content" ng-if="about.post.category == 'video'" >
-        <button class = "button is-dark" type="submit" id ="styleAddPostButton"> Post </button>
+        <button ng-if="about.post.category == 'question'||about.post.category == 'video'||about.post.category == 'code'||about.post.category == 'status'" class = "button is-dark" type="submit" id ="styleAddPostButton"> Post </button>
       </form>
     </div>
   </div>
