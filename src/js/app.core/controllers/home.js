@@ -11,17 +11,17 @@ function HomeController(UserService,$state,$rootScope){
 			resp =>{
 				vm.userposts = resp.data
 
-				vm.questions = vm.userposts.filter(function(post){
-					return post.category === 'question';
+				vm.questions = vm.userposts.filter(function(userpost){
+					return userpost.category === 'question';
 				})
-				vm.videos = vm.userposts.filter(function(post){
-					return post.category === 'video';
+				vm.videos = vm.userposts.filter(function(userpost){
+					return userpost.category === 'video';
 				})
-				vm.codes = vm.userposts.filter(function(post){
-					return post.category === 'code';
+				vm.codes = vm.userposts.filter(function(userpost){
+					return userpost.category === 'code';
 				})
-				vm.statuses = vm.userposts.filter(function(post){
-					return post.category === 'status';
+				vm.statuses = vm.userposts.filter(function(userpost){
+					return userpost.category === 'status';
 				})
 			})
 	}
