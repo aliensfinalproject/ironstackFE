@@ -6,25 +6,23 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 	vm.showComments = false;
 
 	vm.getPostDetails = function(){
-		UserService.getPost($stateParams.class_id,$stateParams.id).then(
-			resp => {
-				vm.postDetails = resp.data
-				var str = vm.postDetails.content
-				var breakCode = str.split("=");
-				var reqdCode = breakCode[1];
-				var base_url = "https://www.youtube.com/embed/"
-				var video_url = base_url.concat(reqdCode);
-				vm.display_url= $sce.trustAsResourceUrl(video_url)
-
-				UserService.getComments($stateParams.id).then(
-				resp => {
-					vm.count = resp.data.length
-				})
-
+			UserService.getPost($stateParams.class_id,$stateParams.id).then(resp => {
+			    vm.postDetails = resp.data
+			    var str = vm.postDetails.content
+			    var pos = str.indexOf('watch?v=') > 0 ? str.indexOf('watch?v=') + 8 : str.indexOf('tu.be/') + 6;
+			    var reqdCode = str.slice(pos, pos + 11);
+			    var base_url = "https://www.youtube.com/embed/"
+			    var video_url = base_url + reqdCode;
+			    vm.display_url = $sce.trustAsResourceUrl(video_url)
 			})
-
+			UserService.getComments($stateParams.id).then(resp => {
+					vm.count = resp.data.length
+			})
 	}
 	vm.getPostDetails();
+
+
+
 
 	vm.createComment = function(comment){
 		UserService.addComment(comment, $stateParams.id).then(

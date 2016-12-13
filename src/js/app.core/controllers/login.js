@@ -10,7 +10,7 @@ function LoginController (UserService, $state, $rootScope) {
         UserService.setUser(resp.data);
         $rootScope.$broadcast('loginChange', {});
          vm.loggedInUser = resp.data
-  
+
          if(vm.loggedInUser.admin == true){
           $state.go('root.user.class.list');
         } else if(vm.loggedInUser.class_id){
@@ -19,13 +19,14 @@ function LoginController (UserService, $state, $rootScope) {
           $state.go('root.user.selectclass')
 
         }
-        
+
       },
       errors => {
         console.log(errors.data.error);
         vm.error = errors.data.error
       }
     );
+    return false;
   };
 
 };

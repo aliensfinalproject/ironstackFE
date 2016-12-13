@@ -1,10 +1,9 @@
-function LayoutController ($rootScope, UserService, $cookies) {
+function LayoutController ($rootScope, UserService, $cookies, $stateParams) {
   let vm = this;
 
   vm.admin = UserService.isAdmin();
   vm.loggedIn = UserService.isLoggedIn();
   vm.logout = logout;
-
   vm.userProfile = {};
 
   UserService.getuserProfile().then(function(resp) {
@@ -35,5 +34,5 @@ function LayoutController ($rootScope, UserService, $cookies) {
 
 };
 
-LayoutController.$inject = ['$rootScope', 'UserService', '$cookies'];
+LayoutController.$inject = ['$rootScope', 'UserService', '$cookies', '$stateParams'];
 export { LayoutController };
