@@ -1,40 +1,122 @@
 <div class="box">
 
   <div class="box">
-    <section class = "hero is-dark box">
-      <h1 class = "title is-2 nav-center">My Posts</h1>
-    </section>
-    <table class = "table is-striped" style="width:100%">
-      <tr>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Delete</th>
-      </tr>
-      <tr ng-repeat = "userpost in home.userposts">
-        <td>
-          <ul>
-          <li  ui-sref="root.user.class.postDetails({id: userpost.id,class_id:userpost.class_id})"> {{userpost.title}}</li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-          <li>{{userpost.category}}</li>
-          </ul>
-        </td>
+     <div class="columns">
+       <div class="column notification is-info">
+         <h1 class = "title nav-center">Questions</h1>
+         <table class = "table is-striped" style="width:100%">
+           <tr>
+             <th>Created At</th>
+             <th>Title</th>
+             <th>Delete</th>
+           </tr>
+           <tr ng-repeat = "question in home.questions" >
+             <td>
+               <ul>
+               <li>{{question.created_at}}</li>
+               </ul>
+             </td>
+             <td>
+               <ul>
+               <li ui-sref= "root.user.class.postDetails({id: question.id,class_id:question.class_id})">{{question.title}}</li>
+               </ul>
+             </td>
+             <td>
+               <ul>
+               <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(question.class_id,question.id)"> x </button></div></a></li>
+               </ul>
+             </td>
+           </tr>
+         </table>
+       </div>
+       <div class="column notification is-warning">
+         <h1 class = "title nav-center">Videos</h1>
+         <table class = "table is-striped" style="width:100%">
+           <tr>
+             <th>Created At</th>
+             <th>Title</th>
+             <th>Delete</th>
+           </tr>
+           <tr ng-repeat = "video in home.videos" >
+             <td>
+               <ul>
+               <li>{{video.created_at}}</li>
+               </ul>
+             </td>
+             <td>
+               <ul>
+               <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:video.class_id})">{{video.title}}</li>
+               </ul>
+             </td>
+             <td>
+               <ul>
+               <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(video.class_id,video.id)"> x </button></div></a></li>
+               </ul>
+             </td>
+         </tr>
+         </table>
+       </div>
+     </div>
+   </div>
 
-        <td>
-          <ul>
-          <li><div><button class = "button is-danger level-right" type="button"  ng-click ="home.removePost(userpost.class_id,userpost.id)"> Delete Post </button></div></li>
-          </ul>
-        </td>
-
-        <!-- <td>
-      <button class = "button is-dark" type="button" id ="backbutton" ui-sref="root.user.class.about({id:userpost.class_id})"> Back </button>
-      </td> -->
-      </tr>
-   </table>
-  </div>
-
- <button class = "button is-dark" type="button" id ="backbutton" ng-click="home.backToClass(home.userposts[0].class_id)"> Back </button>
+   <div class="box">
+      <div class="columns">
+        <div class="column notification is-dark">
+          <h1 class = "title nav-center">Code Snippets</h1>
+          <table class = "table is-striped" style="width:100%">
+            <tr>
+              <th>Created At</th>
+              <th>Title</th>
+              <th>Delete</th>
+            </tr>
+            <tr ng-repeat = "code in home.codes" >
+              <td>
+                <ul>
+                <li>{{code.created_at}}</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                <li ui-sref= "root.user.class.postDetails({id: code.id,class_id:code.class_id})">{{code.title}}</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(code.class_id,code.id)"> x </button></div></a></li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="column notification is-primary">
+          <h1 class = "title nav-center">Statuses</h1>
+          <table class = "table is-striped" style="width:100%">
+            <tr>
+              <th>Created At</th>
+              <th>Title</th>
+              <th>Delete</th>
+            </tr>
+            <tr ng-repeat = "status in home.statuses" >
+              <td>
+                <ul>
+                <li>{{status.created_at}}</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                <li ui-sref= "root.user.class.postDetails({id: status.id,class_id:status.class_id})">{{status.title}}</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(status.class_id,status.id)"> x </button></div></a></li>
+                </ul>
+              </td>
+          </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <button class = "button is-dark" type="button" id ="backbutton" ng-click="home.backToClass(home.userposts[0].class_id)"> Back </button>
 
 </div>
