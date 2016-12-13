@@ -28,6 +28,8 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.getAssignments = getAssignments;
   this.updateAssignment = updateAssignment;
   this.deleteAssignment = deleteAssignment;
+  this.addNote = addNote;
+  this.getNotes = getNotes;
 
   function create (user) {
     return $http.post(`${SERVER}/register`, user);
@@ -104,6 +106,12 @@ function deleteAssignment (id) {
 function updateAssignment(id){
  return $http.get(`${SERVER}/${assignment}/${id}/`, {headers:getHeaders()});
 }
+function addNote (note) {
+  return $http.post(`${SERVER}/userNote`, note, {headers:getHeaders()});
+}
+function getNotes () {
+  return $http.get(`${SERVER}/userNotes`, {headers:getHeaders()});
+}
 
   function isLoggedIn () {
     return $cookies.get('username') ? true : false;
@@ -116,12 +124,15 @@ function updateAssignment(id){
   function logout () {
     $cookies.remove('username');
     $cookies.remove('access_token');
+    $cookies.remove('classId');
+    $cookies.remove('admin');
   }
 
   function setUser (data) {
     $cookies.put('username', data.username);
     $cookies.put('access_token', data.access_token);
     $cookies.put('admin', data.admin ? '1' : '0');
+    $cookies.put('classId', data.class_id);
   }
 
   function getHeaders () {
