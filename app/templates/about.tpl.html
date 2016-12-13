@@ -1,8 +1,5 @@
 <div class="classHome">
 
-
-
-
   <!-- <div class="column"> -->
     <h1 class= "title is-2 nav-center"> {{ about.className}}</h1>
   <!-- </div> -->
@@ -12,7 +9,6 @@
    </div>
      <div id="left-assignments"><a ui-sref="root.user.class.addassignment({ id: about.id })"><button class= "button is-outlined is-info"> Create Assignment </button></a></div>
  </div>
-
 
  <div class="box seeThrough">
     <div class="columns">
@@ -135,59 +131,8 @@
 
 
 
-<<<<<<< HEAD
-           </tr>
-           <tr ng-repeat = "question in about.questions" >
-            <td>
-               <ul>
-               <li> <div> {{ question.created_at }}</div></li>
-               </ul>
-             </td>
-             <td>
-               <ul>
-               <li ui-sref= "root.user.class.postDetails({id: question.id,class_id:question.class_id})">{{question.title}}</li>
-               </ul>
-             </td>
-              <td ng-if="about.isAdmin">
-               <ul>
-               <li> <div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(question.class_id,question.id)" > x </button></div></li>
-               </ul>
-             </td>
-           </tr>
-         </table>
-       </div>
-       <div class="column notification is-warning">
-         <h1 class = "title nav-center">Videos</h1>
-         <table class = "table is-striped" style="width:100%">
-           <tr>
-            <th>Post Date</th>
-             <th>Title</th>
-             <th ng-if="about.isAdmin">Delete</th>
-           </tr>
-           <tr ng-repeat = "video in about.videos" >
-           <td>
-               <ul>
-               <li> <div> {{video.created_at}}</div></li>
-               </ul>
-             </td>
-             <td>
-               <ul>
-               <li ui-sref= "root.user.class.postDetails({id: video.id,class_id:video.class_id})">{{video.title}}</li>
-               </ul>
-             </td>
-             <td ng-if="about.isAdmin">
-               <ul>
-               <li<div><button  class = "button is-danger" type="button"  ng-click = "about.removePost(video.class_id,video.id)"> x </button></div></a></li>
-               </ul>
-             </td>
-         </tr>
-         </table>
-       </div>
-     </div>
-   </div>
-=======
   <a ui-sref = "root.user.class.list"><button class = "button is-dark" type="button" id ="backbutton" ng-if="about.isAdmin"> Back </button></a>
->>>>>>> pictures
+
 
 
 </div>
