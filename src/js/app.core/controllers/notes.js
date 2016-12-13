@@ -12,6 +12,7 @@ function NotesController (UserService){
 
   vm.readNotes = function () {
     UserService.getNotes().then(resp => {
+      console.log(resp)
       vm.notes = resp.data
     })
   }
