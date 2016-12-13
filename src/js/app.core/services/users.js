@@ -18,6 +18,7 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.addComment = addComment;
   this.getComments = getComments;
   this.userProfile = userProfile;
+  this.getuserProfile = getuserProfile;
   this.isLoggedIn = isLoggedIn;
   this.isAdmin = isAdmin;
   this.setUser = setUser;
@@ -28,6 +29,9 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   this.updateAssignment = updateAssignment;
   this.deleteAssignment = deleteAssignment;
   this.getPostAssignments = getPostAssignments;
+  this.addNote = addNote;
+  this.getNotes = getNotes;
+
 
   function create (user) {
     return $http.post(`${SERVER}/register`, user);
@@ -80,21 +84,24 @@ function UserService ($http, $cookies, SERVER,$stateParams) {
   }
   function addComment(comment,post_id){
     return $http.post(`${SERVER}/post/${post_id}/comment`,comment,{headers:getHeaders()});
- }
- function getComments(post_id){
+  }
+  function getComments(post_id){
   return $http.get(`${SERVER}/post/${post_id}/comments`,{headers:getHeaders()});
- }
- function deleteComment(post_id,id){
+  }
+  function deleteComment(post_id,id){
   return $http.delete(`${SERVER}/post/${post_id}/comments/${id}`,{headers:getHeaders()});
- }
- function userProfile(user){
-    return $http.post(`${SERVER}/slackuser/`,user,{headers:getHeaders()});
-
+  }
+  function userProfile(user){
+  return $http.post(`${SERVER}/slackuser/`,user,{headers:getHeaders()});
+  }
+  function getuserProfile(){
+  return $http.get(`${SERVER}/userProfile/`,{headers:getHeaders()});
   }
 
- function addAssignment(assignment){
+
+  function addAssignment(assignment){
    return $http.post(`${SERVER}/assignment/`, assignment,  {headers:getHeaders()});
-}
+  }
 function getAssignments(class_id){
  return $http.get(`${SERVER}/${class_id}/assignments/`, {headers:getHeaders()});
 }
@@ -103,6 +110,12 @@ function deleteAssignment (id) {
 }
 function updateAssignment(id){
  return $http.get(`${SERVER}/${assignment}/${id}/`, {headers:getHeaders()});
+}
+function addNote (note) {
+  return $http.post(`${SERVER}/userNote`, note, {headers:getHeaders()});
+}
+function getNotes () {
+  return $http.get(`${SERVER}/userNotes`, {headers:getHeaders()});
 }
 
   function isLoggedIn () {
@@ -116,12 +129,15 @@ function updateAssignment(id){
   function logout () {
     $cookies.remove('username');
     $cookies.remove('access_token');
+    $cookies.remove('classId');
+    $cookies.remove('admin');
   }
 
   function setUser (data) {
     $cookies.put('username', data.username);
     $cookies.put('access_token', data.access_token);
     $cookies.put('admin', data.admin ? '1' : '0');
+    $cookies.put('classId', data.class_id);
   }
 
   function getHeaders () {

@@ -1,3 +1,6 @@
+
+import moment from 'moment';
+
 function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 	let vm = this
 	vm.post = {}
@@ -13,6 +16,9 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 	vm.videos = [];
 	vm.codes = [];
 	vm.statuses = [];
+
+	vm.date =""
+	vm.date=[]
 
 	function getAssignments () {
 		console.log('hi there')
@@ -54,19 +60,48 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 
 				vm.posts = resp.data
 				vm.classID = vm.posts[0].class_id
+				/*for(let i=0 ; i<vm.posts.length;i++){
+					vm.storeddate = vm.posts[i].created_at
+					vm.date = moment(vm.storeddate).format('MMMM Do YYYY')
+					console.log(vm.date)
+
+				}*/
+
+
 
 				vm.questions = vm.posts.filter(function(post){
 					return post.category === 'question';
 				})
+
+				for(let i=0 ; i<vm.questions.length;i++){
+				 vm.questions[i].created_at = moment(vm.questions[i].created_at).format('MMMM Do YYYY')
+
+				}
+
 				vm.videos = vm.posts.filter(function(post){
 					return post.category === 'video';
 				})
+				for(let i=0 ; i<vm.videos.length;i++){
+				 vm.videos[i].created_at = moment(vm.videos[i].created_at).format('MMMM Do YYYY')
+
+				}
+
 				vm.codes = vm.posts.filter(function(post){
 					return post.category === 'code';
 				})
+				for(let i=0 ; i<vm.codes.length;i++){
+				 vm.codes[i].created_at = moment(vm.codes[i].created_at).format('MMMM Do YYYY')
+
+				}
+
 				vm.statuses = vm.posts.filter(function(post){
 					return post.category === 'status';
 				})
+				for(let i=0 ; i<vm.statuses.length;i++){
+				 vm.statuses[i].created_at = moment(vm.statuses[i].created_at).format('MMMM Do YYYY')
+
+				}
+
 			})
 	}
 	vm.readPost();
