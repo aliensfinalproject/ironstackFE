@@ -31,6 +31,11 @@
         	  <option value="{{classOption.campus}}" ng-repeat = "classOption in select.classOptions"> {{classOption.campus}}</option>
         	</select>
 
+          <select class="styling_select" value = "class" ng-model ="clazz.startDate">
+            <option value="" disabled selected>Please Select Starting Date ...</option>
+            <option value="{{classOption.startDate}}" ng-repeat = "classOption in select.classOptions"> {{classOption.startDate}}</option>
+          </select>
+
         	<button class = "button is-dark" type="submit"> Register Class </button>
 
         </form>

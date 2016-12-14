@@ -8,6 +8,11 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/error.tpl.html'
 
    })
+   .state('root.marketing', {
+     url: '/start',
+     templateUrl: 'templates/marketing.tpl.html'
+   })
+
    .state('root.main', {
      url: '/',
      templateUrl: 'templates/main.tpl.html'

@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 function SelectClassController(UserService,$state,$rootScope,$stateParams){
 	 let vm = this
 	 vm.classOptions = []
@@ -6,6 +8,11 @@ function SelectClassController(UserService,$state,$rootScope,$stateParams){
 	 	UserService.getClasses().then(
 	 		resp =>{
 	 			vm.classOptions = resp.data;
+
+				for(let i=0 ; i<vm.classOptions.length;i++){
+				 vm.classOptions[i].startDate = moment(vm.classOptions[i].startDate).format('MMMM Do YYYY')
+
+				}
 
 	 		})
 	 }
@@ -19,7 +26,7 @@ function SelectClassController(UserService,$state,$rootScope,$stateParams){
 
 	 		}, error => { console.log(error); })
 	 }
-	 
+
 
 }
 

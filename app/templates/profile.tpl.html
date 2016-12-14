@@ -1,8 +1,8 @@
-<div class="box">
+<div class="box seeThrough">
 	<h1 class="title nav-center"> My Profile</h1>
   <div class="divCenter"><img class="profileImg" ng-src="{{profile.userprofile.image_url}}"></div>
 
-      
+
     <div class="card-content">
       <div class="content section">
         <form name="signup-form" ng-submit="profile.createProfile(user)">
@@ -14,10 +14,9 @@
             <input class = "input"  type="text" placeholder="Add Image"
                    ng-model="profile.userprofile.image_url" required />
           </p>
-        
+
            <button class = "button is-dark is-medium" type="submit"> Update Profile</button>
         </form>
       </div>
     </div>
   </div>
-
