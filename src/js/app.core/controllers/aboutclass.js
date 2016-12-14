@@ -144,5 +144,18 @@ function AboutController(UserService,$state,$rootScope,$stateParams,$http){
 
 }
 
+
+// function init () {
+//
+// 			vm.readPost();
+// 			vm.listclasses();
+// 			getAssignments();
+//
+// }
+//
+// init();
+//
+// }
+
 AboutController.$inject = ['UserService', '$state', '$rootScope','$stateParams','$http'];
 export { AboutController };

@@ -5,38 +5,37 @@
     <th>Week</th>
     <th>Title</th>
     <th>Description</th>
-    <th>Delete</th>
-    <th>Posts</th>
+    <th ng-if= "enabled.isAdmin">Delete</th>
 
 
   </tr>
   <tr ng-repeat = "item in enabled.list" >
     <td>
       <ul>
-      <li>{{item.week}}</li>
+      <li<a ui-sref="root.user.class.assignmentabout({id: enabled.class_id , assignment_id: item.id })">{{item.week}}</a></li>
       </ul>
     </td>
     <td>
       <ul>
-      <li>{{item.title}}</li>
+      <li><a ui-sref="root.user.class.assignmentabout({id: enabled.class_id , assignment_id: item.id })">{{item.title}}</a></li>
       </ul>
     </td>
     <td>
       <ul>
-      <li>{{item.description}}</li>
+      <li><a ui-sref="root.user.class.assignmentabout({id: enabled.class_id , assignment_id: item.id })">{{item.description}}</a></li>
       </ul>
     </td>
     <td>
       <ul>
-        <li>  <button type="button" class= "button is-outlined is-info" ng-if="enabled.isAdmin" ng-click="enabled.deleteassignment(item.id)"> Delete </button></a>
+        <li>  <button type="button" class= "button is-danger" ng-if="enabled.isAdmin" ng-click="enabled.deleteassignment(item.id)"> Delete </button></a>
         </li>
       </ul>
     </td>
     <td>
-      <ul>
+      <!-- <ul>
         <li>  <button type="button" class= "button is-outlined is-info"> <a ui-sref="root.user.class.assignmentabout({id: enabled.class_id , assignment_id: item.id })">Existing Posts</a></button></a>
         </li>
-      </ul>
+      </ul> -->
     </td>
   </tr>
 </table>
