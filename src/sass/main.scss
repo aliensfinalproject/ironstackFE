@@ -1,7 +1,6 @@
 @import 'bulma';
 
-
-    .new-member {
+  .new-member {
       margin-top: 20%;
     }
 
@@ -156,4 +155,36 @@ a{
 
 .mainBox {
   background-color: #EEEDED;
+}  
+
+.marketing{
+  height: 600px;
+  width: 100%
+}
+.solgan{
+  text-align: center;
+  font-size: 50px;
+  padding: 10px;
+  margin-top: 150px;
+  color: white;
+}
+.i_cons{
+  vertical-align: middle;
+  text-align: center;
+}
+.i_cons1{
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+}
+.i_cons2{
+  display: inline-block;
+  color: white;
+  height: 150px;
+  width: 150px;
+}
+.slack{
+  height: 150px;
+  width: 150px;
+  margin-left: 470px;
 }
