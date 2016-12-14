@@ -14,7 +14,7 @@ function AddAssignmentController(UserService,$state,$rootScope,$scope, $statePar
 	 	UserService.addAssignment(assignment).then(
 	 		resp => {
         console.log(resp.data)
-        $state.go('root.user.class.about', {id: id})
+        $state.go('root.user.class.about', {id: assignment.class_id})
 	 		})
 	 }
 
