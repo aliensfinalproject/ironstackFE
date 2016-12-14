@@ -11,7 +11,7 @@ function run ($rootScope, $state, UserService) {
 
   function invalidRoute (toState) {
     let loggedIn = UserService.isLoggedIn();
-    let safeRoutes = ['root.main.login', 'root.main.register'];
+    let safeRoutes = ['root.main.login', 'root.main.register', 'root.marketing'];
 
     return !(loggedIn || safeRoutes.includes(toState.name));
   };
