@@ -155,11 +155,12 @@ a{
 
 .mainBox {
   background-color: #EEEDED;
-}  
+}
 
 .marketing{
   height: 600px;
-  width: 100%
+  width: 100%;
+  position: absolute;
 }
 .solgan{
   text-align: center;
@@ -167,6 +168,9 @@ a{
   padding: 10px;
   margin-top: 150px;
   color: white;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 70px;
+
 }
 .i_cons{
   vertical-align: middle;
@@ -183,8 +187,37 @@ a{
   height: 150px;
   width: 150px;
 }
+.endbar{
+  text-align: center;
+  overflow: auto;
+  position: relative;
+  top:220px;
+  color: white;
+  // font-family: 'Abril Fatface', cursive;
+  font-size: 20px;
+
+
+}
 .slack{
-  height: 150px;
-  width: 150px;
+  //float: right;
+  display: inline-block;
+  height: 90px;
+  width: 90px;
   margin-left: 470px;
+  margin-left: 0px;
+  padding: 7px;
+  margin-left: opx;
+}
+.comment{
+
+  //float:right;
+  display: inline-block;
+  padding: 7px;
+
+}
+.post{
+  display: inline-block;
+  width:100px;
+  // padding: 7px;
+
 }
