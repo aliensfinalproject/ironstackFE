@@ -32,7 +32,7 @@ function PostDetailsController(UserService,$state,$rootScope,$stateParams,$sce,$
 				$http({
 					method: 'POST',
 					url:'https://hooks.slack.com/services/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',
-					data: {"text":"New Comment on "+vm.postDetails.title+": " + vm.comment.content + " <http://localhost:8081/#/class/postDetails/"+ vm.postDetails.class_id + "/" + vm.postDetails.id + ">"},
+					data: {"text":"New Comment on "+vm.postDetails.title+": " + vm.comment.content + " <http://tiy-lelawalker-ironstackfe.surge.sh/#/class/postDetails/"+ vm.postDetails.class_id + "/" + vm.postDetails.id + ">"},
 					headers: {
 						'content-type': undefined
 					}
